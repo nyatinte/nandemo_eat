@@ -7,7 +7,8 @@ import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 
 const Home: NextPage = () => {
   const user = useUser();
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.posts.getAll.useQuery();
+  console.log(data);
 
   return (
     <>
@@ -20,6 +21,13 @@ const Home: NextPage = () => {
         <button className="btn">
           {user.isSignedIn ? <SignOutButton /> : <SignInButton />}
         </button>
+        <div className="">
+          {data?.map((post) => (
+            <div className="" key={post.id}>
+              {post.content}
+            </div>
+          ))}
+        </div>
       </main>
     </>
   );
