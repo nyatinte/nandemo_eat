@@ -13,6 +13,13 @@ const meta: Meta<typeof RottleIn> = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div className="flex h-screen items-center justify-center bg-orange-400">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
