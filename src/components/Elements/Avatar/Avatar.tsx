@@ -2,7 +2,7 @@ import { memo, type ComponentProps, type FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Size = "xs" | "sm" | "md" | "lg" | "xl";
-type AvatarProps = ComponentProps<"img"> & {
+export type AvatarProps = ComponentProps<"img"> & {
   size?: Size;
 };
 export const Avatar: FC<AvatarProps> = ({ src, size, ...props }) => {

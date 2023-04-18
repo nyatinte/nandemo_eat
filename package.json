@@ -9,7 +9,9 @@
     "lint": "next lint",
     "start": "next start",
     "compgen": "hygen generator component",
-    "pagegen": "hygen generator page"
+    "pagegen": "hygen generator page",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.2",
@@ -31,6 +33,14 @@
   "devDependencies": {
     "@markuplint/jsx-parser": "^3.6.1",
     "@markuplint/react-spec": "^3.7.0",
+    "@storybook/addon-essentials": "^7.0.5",
+    "@storybook/addon-interactions": "^7.0.5",
+    "@storybook/addon-links": "^7.0.5",
+    "@storybook/addon-styling": "1.0.0-next.2",
+    "@storybook/blocks": "^7.0.5",
+    "@storybook/nextjs": "^7.0.5",
+    "@storybook/react": "^7.0.5",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/eslint": "^8.21.3",
     "@types/node": "^18.15.5",
     "@types/prettier": "^2.7.2",
@@ -41,12 +51,14 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
+    "eslint-plugin-storybook": "^0.6.11",
     "hygen": "^6.2.11",
     "markuplint": "^3.8.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.6",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "prisma": "^4.11.0",
+    "storybook": "^7.0.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.0.2"
   },
