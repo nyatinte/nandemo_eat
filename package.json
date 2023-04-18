@@ -11,7 +11,8 @@
     "compgen": "hygen generator component",
     "pagegen": "hygen generator page",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=46510dacaca6"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.2",
@@ -49,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.14",
+    "chromatic": "^6.17.3",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
     "eslint-plugin-storybook": "^0.6.11",
@@ -64,5 +66,7 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.11.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "nandemo_eat@0.1.0"
 }

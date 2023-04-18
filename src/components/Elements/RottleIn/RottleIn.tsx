@@ -23,7 +23,10 @@ export const RottleIn: FC<RottleInProps> = ({
         stiffness: 260,
         damping: 20,
       }}
-      className={twMerge("h-40 w-40 bg-white shadow-inner", className)}
+      className={twMerge(
+        "grid h-40 w-40 place-content-center bg-white shadow-inner",
+        className
+      )}
       {...props}
     >
       {children}

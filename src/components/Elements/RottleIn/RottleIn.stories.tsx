@@ -16,7 +16,7 @@ const meta: Meta<typeof RottleIn> = {
   decorators: [
     (Story) => (
       <div className="flex h-screen items-center justify-center bg-orange-400">
-        <Story />
+        <Story>hogehoge</Story>
       </div>
     ),
   ],
