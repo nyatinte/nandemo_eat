@@ -1,14 +1,24 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { RottleIn } from './RottleIn'
+import type { Meta, StoryObj } from "@storybook/react";
+import { RottleIn, type RottleInProps } from "./RottleIn";
 
-const meta: ComponentMeta<typeof RottleIn> = {
-  title: 'Components/RottleIn',
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+const meta: Meta<typeof RottleIn> = {
+  title: "Components/RottleIn",
   component: RottleIn,
-}
-export default meta
+  tags: ["autodocs"],
+  argTypes: {
+    delay: {
+      control: {
+        type: "number",
+      },
+    },
+  },
+};
 
-const Template: ComponentStory<typeof RottleIn> = (args) => <RottleIn {...args} />
+export default meta;
+type Story = StoryObj<typeof RottleIn>;
 
-export const Default = Template.bind({})
-Default.args = {}
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Default: Story = {
+  args: {},
+};
