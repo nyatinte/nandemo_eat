@@ -2,7 +2,7 @@
 to: src/<%= directory %>/<%= name %>/<%= name %>.tsx
 unless_exists: true
 ---
-import React, { FC } from 'react'
+import type { FC } from 'react'
 export type <%= name %>Props = {}
 /**
  * <%= name %>

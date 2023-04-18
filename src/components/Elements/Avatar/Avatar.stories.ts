@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Avatar, AvatarProps } from "./Avatar";
+import { Avatar, type AvatarProps } from "./Avatar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Avatar> = {
-  title: "Example/Avatar",
+  title: "Components/Avatar",
   component: Avatar,
   tags: ["autodocs"],
   argTypes: {

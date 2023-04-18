@@ -1,11 +1,15 @@
+---
+to: src/<%= directory %>/<%= name %>/<%= name %>.stories.tsx
+unless_exists: true
+---
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './Button';
+import { <%= name %> } from './<%= name %>';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
-  component: Button,
+const meta: Meta<typeof <%= name %>> = {
+  title: 'Components/<%= name %>',
+  component: <%= name %>,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: {
@@ -15,32 +19,12 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof <%= name %>>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    label: '<%= name %>',
   },
 };
