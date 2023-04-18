@@ -1,15 +1,39 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 import { api } from "@/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { Avatar } from "@/components/Elements/Avatar";
+import { Avatar } from "@/components/Elements";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import { useState } from "react";
 
 const Home: NextPage = () => {
   const user = useUser();
   const { data } = api.posts.getAll.useQuery();
-  console.log(data);
+  const [isShow, setIsShow] = useState(false);
+
+  const hide: HTMLMotionProps<"div">["animate"] = {
+    opacity: 0,
+    rotate: 0,
+    // 右にすこしずれたあと、左にスライドアウトする
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      duration: 500,
+    },
+    x: [100, -100],
+  };
+  const show = (delay: number): HTMLMotionProps<"div">["animate"] => ({
+    rotate: 360,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+      delay: delay,
+    },
+  });
 
   return (
     <>
@@ -39,6 +63,20 @@ const Home: NextPage = () => {
               {post.content}
             </div>
           ))}
+        </div>
+        <div className="container flex flex-wrap gap-5 border border-black">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <motion.div
+              key={i}
+              className="h-20 w-20 rounded-3xl bg-white shadow-inner"
+              animate={isShow ? show(i * 0.5) : hide}
+            >
+              ほげほげ
+            </motion.div>
+          ))}
+          <button className="btn mt-20" onClick={() => setIsShow(!isShow)}>
+            {isShow ? "Hide" : "Show"}
+          </button>
         </div>
       </main>
     </>
