@@ -1,39 +1,48 @@
+import { type DishCreateFormFields } from "@/features/Dish/DishCreateForm";
 import { type SelectOption, type SelectOptions } from "@/types/SelectOption";
 import { api } from "@/utils/api";
-import { useCallback, type FC, useState } from "react";
+import { useCallback, type FC } from "react";
+import { type Control, useController } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
 import CreatableSelect from "react-select/creatable";
 
+type CategoryCreatableSelectProps = {
+  control: Control<DishCreateFormFields>;
+};
 /**
  * categoryCreatableSelect
  */
-export const CategoryCreatableSelect: FC = () => {
+export const CategoryCreatableSelect: FC<CategoryCreatableSelectProps> = ({
+  control,
+}) => {
+  const { field } = useController<DishCreateFormFields>({
+    name: "category",
+    control,
+  });
   const { data, isError } = api.category.getAll.useQuery();
   const { mutate, isLoading } = api.category.create.useMutation();
-  const [value, setValue] = useState<SelectOption | null>();
 
   const ctx = api.useContext();
   const handleCreate = useCallback(
     (name: string) => {
       if (isLoading) return;
-      setValue({ label: name, value: name });
+      field.onChange(name);
       mutate(
         { name },
         {
           onSuccess: (data) => {
-            setValue({ label: data.name, value: data.id });
             toast.success(data.name + "を追加しました");
             void ctx.category.getAll.invalidate();
           },
           onError: (error) => {
+            field.onChange("");
             toast.error(error.message);
-            setValue(null);
           },
         }
       );
     },
-    [isLoading, mutate, ctx.category.getAll]
+    [isLoading, field, mutate, ctx.category.getAll]
   );
 
   if (isError) return null;
@@ -41,13 +50,18 @@ export const CategoryCreatableSelect: FC = () => {
 
   const options: SelectOptions = data.map((category) => ({
     label: category.name,
-    value: category.id,
+    value: category.name,
   }));
+
   return (
     <CreatableSelect
       options={options}
-      value={value}
-      onChange={(newValue) => setValue(newValue)}
+      {...field}
+      value={{
+        label: field.value,
+        value: field.value,
+      }}
+      onChange={(newValue: SelectOption) => field.onChange(newValue.value)}
       onCreateOption={handleCreate}
       formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
       placeholder="カテゴリを選択してください"

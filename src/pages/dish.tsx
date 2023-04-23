@@ -2,6 +2,7 @@ import { RottleIn } from "@/components/Elements";
 import { LoadingPage } from "@/components/Layout/LoadingPage";
 
 import { CategoryCreatableSelect } from "@/features/Category";
+import { DishCreateForm } from "@/features/Dish/DishCreateForm";
 import { IngredientCreatableSelect } from "@/features/Ingredient";
 import { SubCategoryCreatableSelect } from "@/features/SubCategory/SubCategoryCreatableSelect";
 import { api } from "@/utils/api";
@@ -23,9 +24,7 @@ const Dish: NextPage = () => {
           {dish.name}
         </RottleIn>
       ))}
-      <IngredientCreatableSelect />
-      <CategoryCreatableSelect />
-      <SubCategoryCreatableSelect />
+      <DishCreateForm />
     </div>
   );
 };

@@ -53,4 +53,44 @@ export const dishRouter = createTRPCRouter({
         },
       });
     }),
+
+  /**
+   * create a dish
+   * @param name
+   * @param ingredients
+   * @param category
+   * @param subCategories
+   * @returns
+   */
+  create: publicProcedure
+    .input(
+      z.object({
+        name: z.string(),
+        ingredients: z.array(z.string()),
+        category: z.string(),
+        subCategories: z.array(z.string()),
+      })
+    )
+    .mutation(({ input, ctx }) => {
+      return ctx.prisma.dish.create({
+        data: {
+          name: input.name,
+          ingredients: {
+            connect: input.ingredients.map((ingredient) => ({
+              name: ingredient,
+            })),
+          },
+          category: {
+            connect: {
+              name: input.category,
+            },
+          },
+          subCategories: {
+            connect: input.subCategories.map((subCategory) => ({
+              name: subCategory,
+            })),
+          },
+        },
+      });
+    }),
 });

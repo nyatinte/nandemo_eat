@@ -24,7 +24,7 @@ export const categoryRouter = createTRPCRouter({
 
       if (existingCategory) {
         throw new TRPCError({
-          message: "既に存在する食材です。",
+          message: "既に存在するカテゴリです",
           code: "CONFLICT",
         });
       }
