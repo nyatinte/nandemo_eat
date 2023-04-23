@@ -11,12 +11,60 @@ datasource db {
     relationMode = "prisma"
 }
 
-model Post {
+// marmaidでmdファイルを作成
+generator erd {
+    provider = "prisma-erd-generator"
+    output   = "scheme.md"
+}
+
+model Dislike {
+    id           String     @id @default(cuid())
+    createdAt    DateTime   @default(now())
+    userId       String
+    ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+    ingredientId String
+
+    @@index([ingredientId])
+}
+
+model Dish {
+    id            String        @id @default(cuid())
+    createdAt     DateTime      @default(now())
+    name          String
+    ingredients   Ingredient[]
+    category      Category      @relation(fields: [categoryId], references: [id])
+    subCategories SubCategory[]
+
+    categoryId String
+
+    @@unique([name])
+    @@index([categoryId])
+}
+
+model Ingredient {
+    id        String    @id @default(cuid())
+    createdAt DateTime  @default(now())
+    name      String
+    dishes    Dish[]
+    dislikes  Dislike[]
+
+    @@unique([name])
+}
+
+model Category {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
+    name      String
+    dishes    Dish[]
 
-    content  String @db.VarChar(255)
-    authorId String
+    @@unique([name])
+}
 
-    @@index([authorId])
+model SubCategory {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    name      String
+    dishes    Dish[]
+
+    @@unique([name])
 }
