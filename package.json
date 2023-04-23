@@ -15,7 +15,7 @@
     "pagegen": "hygen generator page",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=46510dacaca6"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.2",
