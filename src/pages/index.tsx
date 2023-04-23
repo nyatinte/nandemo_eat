@@ -9,7 +9,6 @@ import { useState } from "react";
 
 const Home: NextPage = () => {
   const user = useUser();
-  const { data } = api.posts.getAll.useQuery();
   const [isShow, setIsShow] = useState(false);
 
   const hide: HTMLMotionProps<"div">["animate"] = {
@@ -57,13 +56,6 @@ const Home: NextPage = () => {
             <button className="btn">Sign In</button>
           </SignInButton>
         )}
-        <div className="">
-          {data?.map((post) => (
-            <div className="" key={post.id}>
-              {post.content}
-            </div>
-          ))}
-        </div>
         <div className="container flex flex-wrap gap-5 border border-black">
           {[0, 1, 2, 3, 4].map((i) => (
             <motion.div

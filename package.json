@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:storybook": "storybook dev -p 6006",
+    "dev:prisma": "prisma studio",
     "build": "next build",
-    "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
@@ -12,7 +15,7 @@
     "pagegen": "hygen generator page",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=46510dacaca6"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.2",
@@ -27,6 +30,8 @@
     "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-select": "^5.7.2",
     "superjson": "1.12.2",
     "tailwind-merge": "^1.12.0",
     "zod": "^3.21.4"
@@ -34,6 +39,7 @@
   "devDependencies": {
     "@markuplint/jsx-parser": "^3.6.1",
     "@markuplint/react-spec": "^3.7.0",
+    "@mermaid-js/mermaid-cli": "^10.1.0",
     "@storybook/addon-essentials": "^7.0.5",
     "@storybook/addon-interactions": "^7.0.5",
     "@storybook/addon-links": "^7.0.5",
@@ -56,17 +62,23 @@
     "eslint-plugin-storybook": "^0.6.11",
     "hygen": "^6.2.11",
     "markuplint": "^3.8.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
     "prettier": "^2.8.6",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "prisma": "^4.11.0",
+    "prisma-erd-generator": "^1.5.4",
     "storybook": "^7.0.5",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
   },
   "ct3aMetadata": {
     "initVersion": "7.11.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "nandemo_eat@0.1.0"
+  "_id": "nandemo_eat@0.1.0",
+  "prisma": {
+    "seed": "ts-node --project ./prisma/cli_tsconfig.json prisma/seed.ts"
+  }
 }
