@@ -11,11 +11,37 @@ import { api, type RouterInputs } from "@/utils/api";
 import { CategoryCreatableSelect } from "@/features/Category";
 import { SubCategoryCreatableSelect } from "@/features/SubCategory";
 import { toast } from "react-hot-toast";
+import {
+  invalidMessage,
+  minArrayLengthMessage,
+  requiredMessage,
+} from "@/utils/textFormat";
 export const dishCreateFormSchema = z.object({
-  name: z.string(),
-  ingredients: z.array(z.string()),
-  category: z.string(),
-  subCategories: z.array(z.string()),
+  name: z
+    .string({
+      required_error: requiredMessage("料理名"),
+    })
+    .min(1, requiredMessage("料理名")),
+  ingredients: z
+    .array(z.string({ invalid_type_error: invalidMessage("食材") }), {
+      required_error: requiredMessage("食材"),
+    })
+    .min(1, minArrayLengthMessage("食材", 1)),
+  category: z
+    .string({
+      required_error: requiredMessage("カテゴリ"),
+    })
+    .min(1, requiredMessage("カテゴリ")),
+  subCategories: z
+    .array(
+      z.string({
+        invalid_type_error: invalidMessage("サブカテゴリ"),
+      }),
+      {
+        required_error: requiredMessage("サブカテゴリ"),
+      }
+    )
+    .min(1, minArrayLengthMessage("サブカテゴリ", 1)),
 } satisfies Record<keyof RouterInputs["dish"]["create"], z.ZodTypeAny>);
 export type DishCreateFormFields = z.infer<typeof dishCreateFormSchema>;
 /**
@@ -56,7 +82,7 @@ export const DishCreateForm: FC = () => {
 
   return (
     <form
-      className="container flex flex-col gap-4 rounded border"
+      className="container flex flex-col gap-4 rounded-xl border bg-orange-50 p-4"
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onSubmit={handleSubmit(onSubmit, onSubmitError)}
     >

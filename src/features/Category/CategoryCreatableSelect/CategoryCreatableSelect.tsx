@@ -1,5 +1,5 @@
 import { type DishCreateFormFields } from "@/features/Dish/DishCreateForm";
-import { type SelectOption, type SelectOptions } from "@/types/SelectOption";
+import { type SelectOptions } from "@/types/SelectOption";
 import { api } from "@/utils/api";
 import { useCallback, type FC } from "react";
 import { type Control, useController } from "react-hook-form";
@@ -61,10 +61,16 @@ export const CategoryCreatableSelect: FC<CategoryCreatableSelectProps> = ({
         label: field.value,
         value: field.value,
       }}
-      onChange={(newValue: SelectOption) => field.onChange(newValue.value)}
+      onChange={(newValue) => {
+        if (!newValue) {
+          field.onChange("");
+        } else {
+          field.onChange(newValue.value);
+        }
+      }}
       onCreateOption={handleCreate}
-      formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
       placeholder="カテゴリを選択してください"
+      formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
     />
   );
 };
