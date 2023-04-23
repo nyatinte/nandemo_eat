@@ -17,7 +17,7 @@ export const RottleIn: FC<RottleInProps> = ({
   return (
     <motion.div
       initial={{ scale: 0 }}
-      animate={{ rotate: 180, scale: 1 }}
+      animate={{ rotate: 360, scale: 1 }}
       transition={{
         type: "spring",
         stiffness: 260,

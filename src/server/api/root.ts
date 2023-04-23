@@ -1,5 +1,5 @@
 import { createTRPCRouter } from "@/server/api/trpc";
-import { postsRouter } from "./routers/posts";
+import { dishRouter } from "./routers/dish";
 
 /**
  * This is the primary router for your server.
@@ -7,7 +7,7 @@ import { postsRouter } from "./routers/posts";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  posts: postsRouter,
+  dish: dishRouter,
 });
 
 // export type definition of API
