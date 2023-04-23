@@ -3,6 +3,7 @@ import { LoadingPage } from "@/components/Layout/LoadingPage";
 
 import { CategoryCreatableSelect } from "@/features/Category";
 import { IngredientCreatableSelect } from "@/features/Ingredient";
+import { SubCategoryCreatableSelect } from "@/features/SubCategory/SubCategoryCreatableSelect";
 import { api } from "@/utils/api";
 import { type NextPage } from "next";
 
@@ -24,6 +25,7 @@ const Dish: NextPage = () => {
       ))}
       <IngredientCreatableSelect />
       <CategoryCreatableSelect />
+      <SubCategoryCreatableSelect />
     </div>
   );
 };
