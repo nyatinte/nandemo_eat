@@ -1,6 +1,6 @@
 import { type SelectOptions } from "@/types/SelectOption";
 import { api } from "@/utils/api";
-import { useCallback, type FC, useState, useEffect } from "react";
+import { useCallback, type FC, useState } from "react";
 import { toast } from "react-hot-toast";
 
 import CreatableSelect from "react-select/creatable";
@@ -46,10 +46,6 @@ export const IngredientCreatableSelect: FC = () => {
     },
     [isLoading, mutate, ctx.ingredient.getAll]
   );
-
-  useEffect(() => {
-    console.log("value", value);
-  }, [value]);
 
   if (isError) return null;
   if (!data) return <CreatableSelect placeholder="Loading..." isDisabled />;
