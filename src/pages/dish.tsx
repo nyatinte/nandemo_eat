@@ -1,5 +1,6 @@
 import { RottleIn } from "@/components/Elements";
 import { LoadingPage } from "@/components/Layout/LoadingPage";
+import { IngredientCreatableSelect } from "@/features";
 import { api } from "@/utils/api";
 import { type NextPage } from "next";
 
@@ -19,6 +20,7 @@ const Dish: NextPage = () => {
           {dish.name}
         </RottleIn>
       ))}
+      <IngredientCreatableSelect />
     </div>
   );
 };
