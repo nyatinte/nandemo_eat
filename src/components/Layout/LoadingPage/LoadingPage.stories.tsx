@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { LoadingPage } from './LoadingPage';
+import { LoadingPage } from "./LoadingPage";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof LoadingPage> = {
-  title: 'Components/LoadingPage',
+  title: "Components/LoadingPage",
   component: LoadingPage,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     backgroundColor: {
-      control: 'color',
+      control: "color",
     },
   },
 };
@@ -21,6 +21,6 @@ type Story = StoryObj<typeof LoadingPage>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'LoadingPage',
+    label: "LoadingPage",
   },
 };

@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { DishCreateForm } from './DishCreateForm';
+import { DishCreateForm } from "./DishCreateForm";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof DishCreateForm> = {
-  title: 'Components/DishCreateForm',
+  title: "Components/DishCreateForm",
   component: DishCreateForm,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     backgroundColor: {
-      control: 'color',
+      control: "color",
     },
   },
 };
@@ -21,6 +21,6 @@ type Story = StoryObj<typeof DishCreateForm>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'DishCreateForm',
+    label: "DishCreateForm",
   },
 };
