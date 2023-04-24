@@ -3,6 +3,7 @@ import { dishRouter } from "./routers/dish";
 import { ingredientRouter } from "./routers/ingredient";
 import { categoryRouter } from "./routers/category";
 import { subCategoryRouter } from "./routers/subCategory";
+import { dislikeRouter } from "./routers/dislike";
 
 /**
  * This is the primary router for your server.
@@ -14,6 +15,7 @@ export const appRouter = createTRPCRouter({
   ingredient: ingredientRouter,
   category: categoryRouter,
   subCategory: subCategoryRouter,
+  dislike: dislikeRouter,
 });
 
 // export type definition of API
