@@ -22,6 +22,7 @@ export const RottleIn: FC<RottleInProps> = ({
         type: "spring",
         stiffness: 260,
         damping: 20,
+        delay: delay,
       }}
       className={twMerge(
         "grid h-40 w-40 place-content-center bg-white shadow-inner",
