@@ -1,8 +1,10 @@
 import { useRef, type FC } from "react";
-import { type AnimationProps, motion, useCycle } from "framer-motion";
+import { type AnimationProps, motion } from "framer-motion";
 import { useDimensions } from "@/hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
+import { useAtom, useAtomValue } from "jotai";
+import { sidebarOpenAtom, toggleSidebarAtom } from "@/atoms/sidebarOpenAtom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -29,7 +31,7 @@ const sidebar = {
  * @see https://codesandbox.io/s/framer-motion-side-menu-mx2rw
  */
 export const Sidebar: FC = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, toggleIsOpen] = useAtom(toggleSidebarAtom);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   return (
@@ -46,7 +48,7 @@ export const Sidebar: FC = () => {
           variants={sidebar}
         />
         <Navigation />
-        <MenuToggle toggle={() => toggleOpen()} />
+        <MenuToggle toggle={() => toggleIsOpen()} />
       </motion.nav>
     </>
   );

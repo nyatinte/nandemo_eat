@@ -29,6 +29,7 @@
     "@trpc/server": "^10.18.0",
     "daisyui": "^2.51.5",
     "framer-motion": "^10.12.2",
+    "jotai": "^2.0.4",
     "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

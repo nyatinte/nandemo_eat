@@ -20,6 +20,9 @@ export const Navigation: FC = () => {
   return (
     <motion.ul variants={variants} className="absolute top-24 w-72 p-6 ">
       <MenuItem>
+        <Link href="/" label="Home" />
+      </MenuItem>
+      <MenuItem>
         {user.isSignedIn ? (
           <>
             <SignOutButton>
