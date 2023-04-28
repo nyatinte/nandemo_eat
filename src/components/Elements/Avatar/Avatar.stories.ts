@@ -6,14 +6,6 @@ const meta: Meta<typeof Avatar> = {
   title: "Components/Avatar",
   component: Avatar,
   tags: ["autodocs"],
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["xs", "sm", "md", "lg", "xl"] satisfies AvatarProps["size"][],
-      },
-    },
-  },
 };
 
 export default meta;
@@ -25,6 +17,12 @@ const src =
 export const Default: Story = {
   args: {
     src: src,
+  },
+};
+
+export const NoImage: Story = {
+  args: {
+    src: undefined,
   },
 };
 export const LoadingFailed: Story = {
