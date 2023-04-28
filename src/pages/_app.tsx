@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import { Zen_Maru_Gothic } from "next/font/google";
 import { Header } from "@/components/Layout/Header";
 
-export const zen_maru_gothic = Zen_Maru_Gothic({
+const zen_maru_gothic = Zen_Maru_Gothic({
   weight: ["400", "700"],
   subsets: ["latin"],
 });

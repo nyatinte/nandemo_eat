@@ -1,13 +1,9 @@
-import { NextPage } from "next";
-import { twMerge } from "tailwind-merge";
-import { zen_maru_gothic } from "./_app";
+import { type NextPage } from "next";
 import { Link } from "@/components/Elements";
 
 const NotFoundPage: NextPage = () => {
   return (
-    <div
-      className={twMerge("hero h-without-header", zen_maru_gothic.className)}
-    >
+    <div className="hero h-without-header">
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">404</h1>
