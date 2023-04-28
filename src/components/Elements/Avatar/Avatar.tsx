@@ -1,7 +1,9 @@
 import Image, { type ImageProps } from "next/image";
 import { type FC } from "react";
 
-export type AvatarProps = Omit<ImageProps, "alt">;
+export type AvatarProps = Omit<ImageProps, "alt" | "src"> & {
+  src?: string;
+};
 export const Avatar: FC<AvatarProps> = ({ src, ...props }) => {
   return (
     <div className="avatar">

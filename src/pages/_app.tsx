@@ -6,10 +6,9 @@ import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import { Zen_Maru_Gothic } from "next/font/google";
-import { Sidebar } from "@/components/Layout/Sidebar";
 import { Header } from "@/components/Layout/Header";
 
-const zen_maru_gothic = Zen_Maru_Gothic({
+export const zen_maru_gothic = Zen_Maru_Gothic({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
