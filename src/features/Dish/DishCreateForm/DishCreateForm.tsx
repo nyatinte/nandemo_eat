@@ -82,12 +82,12 @@ export const DishCreateForm: FC = () => {
 
   return (
     <form
-      className="container flex flex-col gap-4 rounded-xl border bg-orange-50 p-4"
+      className="container flex flex-col gap-4 rounded-xl bg-orange-50 p-4"
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onSubmit={handleSubmit(onSubmit, onSubmitError)}
     >
       <input
-        className="input"
+        className="focus:ring-3 rounded-md border border-gray-300  px-2 py-1.5 ring-2 ring-transparent duration-200 placeholder:text-gray-500 focus:ring-blue-500"
         type="text"
         placeholder="料理名"
         {...register("name")}
@@ -95,7 +95,7 @@ export const DishCreateForm: FC = () => {
       <IngredientCreatableSelect control={control} />
       <CategoryCreatableSelect control={control} />
       <SubCategoryCreatableSelect control={control} />
-      <button className="btn" disabled={isSubmitting}>
+      <button className="btn mt-4" disabled={isSubmitting}>
         作成
       </button>
     </form>
