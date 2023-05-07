@@ -1,6 +1,7 @@
-import * as React from "react";
 import { motion } from "framer-motion";
-import { useAtom, useSetAtom } from "jotai";
+import { useSetAtom } from "jotai";
+import * as React from "react";
+
 import { closeSidebarAtom } from "@/atoms/sidebarOpenAtom";
 
 const variants = {

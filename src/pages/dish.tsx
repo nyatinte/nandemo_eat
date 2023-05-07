@@ -1,10 +1,10 @@
-import { Container } from "@/components/Layout/Container";
-import { LoadingPage } from "@/components/Layout/LoadingPage";
-
-import { DishCreateForm } from "@/features/Dish/DishCreateForm";
-import { api } from "@/utils/api";
 import { type NextPage } from "next";
 import Head from "next/head";
+
+import { Container } from "@/components/Layout/Container";
+import { LoadingPage } from "@/components/Layout/LoadingPage";
+import { DishCreateForm } from "@/features/Dish/DishCreateForm";
+import { api } from "@/utils/api";
 
 const Dish: NextPage = () => {
   const { data, isError } = api.dish.getAll.useQuery();

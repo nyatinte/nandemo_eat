@@ -1,5 +1,6 @@
+import { RottleIn } from "./RottleIn";
+
 import type { Meta, StoryObj } from "@storybook/react";
-import { RottleIn, type RottleInProps } from "./RottleIn";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof RottleIn> = {

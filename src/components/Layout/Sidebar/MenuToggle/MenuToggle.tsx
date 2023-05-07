@@ -1,4 +1,5 @@
 import { type SVGMotionProps, motion } from "framer-motion";
+
 import type { FC } from "react";
 
 const Path = (props: SVGMotionProps<SVGPathElement>) => (

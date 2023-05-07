@@ -1,8 +1,13 @@
-import type { FC } from "react";
-import { Sidebar } from "../Sidebar";
-import Image from "next/image";
-import { Avatar } from "@/components/Elements";
 import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
+
+import { Avatar } from "@/components/Elements";
+
+import { Sidebar } from "../Sidebar";
+
+import type { FC } from "react";
+
+
 
 /**
  * Header

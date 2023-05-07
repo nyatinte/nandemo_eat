@@ -1,6 +1,8 @@
-import { type Size } from "@/types/Size";
-import type { FC } from "react";
 import { twMerge } from "tailwind-merge";
+
+import { type Size } from "@/types/Size";
+
+import type { FC } from "react";
 export type LoadingSpinnerProps = {
   size?: Size;
 };

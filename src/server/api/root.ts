@@ -1,9 +1,10 @@
 import { createTRPCRouter } from "@/server/api/trpc";
-import { dishRouter } from "./routers/dish";
-import { ingredientRouter } from "./routers/ingredient";
+
 import { categoryRouter } from "./routers/category";
-import { subCategoryRouter } from "./routers/subCategory";
+import { dishRouter } from "./routers/dish";
 import { dislikeRouter } from "./routers/dislike";
+import { ingredientRouter } from "./routers/ingredient";
+import { subCategoryRouter } from "./routers/subCategory";
 
 /**
  * This is the primary router for your server.

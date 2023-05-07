@@ -1,8 +1,12 @@
-import { type FC } from "react";
-import { type AnimationProps, motion } from "framer-motion";
-import { MenuItem } from "../MenuItem";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { type AnimationProps, motion } from "framer-motion";
+import { type FC } from "react";
+
 import { Link, type LinkProps } from "@/components/Elements";
+
+import { MenuItem } from "../MenuItem";
+
+
 
 const variants = {
   open: {

@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import { type Size } from "@/types/Size";
 
 import { LoadingSpinner } from "./LoadingSpinner";
-import { Size } from "@/types/Size";
+
+import type { Meta, StoryObj } from "@storybook/react";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof LoadingSpinner> = {

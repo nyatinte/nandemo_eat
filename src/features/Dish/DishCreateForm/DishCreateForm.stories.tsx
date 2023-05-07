@@ -1,6 +1,7 @@
+import { DishCreateForm } from "./DishCreateForm";
+
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DishCreateForm } from "./DishCreateForm";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof DishCreateForm> = {

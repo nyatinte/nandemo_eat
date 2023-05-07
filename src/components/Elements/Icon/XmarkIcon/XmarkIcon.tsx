@@ -1,5 +1,6 @@
-import type { FC } from "react";
 import { twMerge } from "tailwind-merge";
+
+import type { FC } from "react";
 export type XmarkIconProps = { className?: string };
 /**
  * XmarkIcon

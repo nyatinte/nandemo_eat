@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+
 import { Link } from "@/components/Elements";
 
 const NotFoundPage: NextPage = () => {

@@ -1,9 +1,3 @@
-import { LoadingSpinner } from "@/components/Elements";
-import { XmarkIcon } from "@/components/Elements/Icon/XmarkIcon";
-import { LoadingPage } from "@/components/Layout";
-import { Container } from "@/components/Layout/Container";
-import { type SelectOptions } from "@/types/SelectOption";
-import { api } from "@/utils/api";
 import { useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type NextPage } from "next";
@@ -17,6 +11,13 @@ import {
 import toast from "react-hot-toast";
 import CreatableSelect from "react-select/creatable";
 import { z } from "zod";
+
+import { LoadingSpinner } from "@/components/Elements";
+import { XmarkIcon } from "@/components/Elements/Icon/XmarkIcon";
+import { LoadingPage } from "@/components/Layout";
+import { Container } from "@/components/Layout/Container";
+import { type SelectOptions } from "@/types/SelectOption";
+import { api } from "@/utils/api";
 
 const schema = z.object({
   ingredients: z.array(z.string()),

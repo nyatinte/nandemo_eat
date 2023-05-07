@@ -1,10 +1,14 @@
-import { useRef, type FC } from "react";
 import { type AnimationProps, motion } from "framer-motion";
+import { useAtom } from "jotai";
+import { useRef, type FC } from "react";
+
+import { toggleSidebarAtom } from "@/atoms/sidebarOpenAtom";
 import { useDimensions } from "@/hooks/useDimensions";
+
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { useAtom } from "jotai";
-import { toggleSidebarAtom } from "@/atoms/sidebarOpenAtom";
+
+
 
 const sidebar = {
   open: (height = 1000) => ({

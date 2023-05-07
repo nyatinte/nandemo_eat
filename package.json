@@ -10,6 +10,7 @@
     "build": "next build",
     "postinstall": "prisma generate",
     "lint": "next lint",
+    "lint:fix": "eslint --fix --ext .ts,.tsx --ignore-path .gitignore src",
     "start": "next start",
     "compgen": "hygen generator component",
     "pagegen": "hygen generator page",
