@@ -1,3 +1,4 @@
+import { type SubCategory } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
@@ -43,4 +44,43 @@ export const subCategoryRouter = createTRPCRouter({
       .slice(0, 3);
     return randomSubCategories;
   }),
+
+  getRandomByCategory: publicProcedure
+    .input(z.object({ category: z.string() }))
+    .query(async ({ ctx, input }) => {
+      console.group("getRandomByCategory");
+      console.log("input", input);
+      const subCategories = await ctx.prisma.subCategory.findMany({});
+
+      // カテゴリをもとに、該当のカテゴリとサブカテゴリをもつ料理があるかどうかを判定する。もし料理があれば、そのサブカテゴリを返す。
+      const subCategoriesByCategory: SubCategory[] = [];
+      for (const subCategory of subCategories) {
+        const dish = await ctx.prisma.dish.findFirst({
+          where: {
+            subCategories: {
+              some: {
+                name: subCategory.name,
+              },
+            },
+            category: {
+              name: input.category,
+            },
+          },
+        });
+        console.log("dish", dish);
+        if (dish) {
+          console.groupEnd();
+          subCategoriesByCategory.push(subCategory);
+        }
+      }
+
+      console.log("subCategoriesByCategory", subCategoriesByCategory);
+      const randomSubCategories = subCategoriesByCategory
+        .sort(() => Math.random() - Math.random())
+        .slice(0, 3);
+      console.log("randomSubCategories", randomSubCategories);
+      console.groupEnd();
+
+      return randomSubCategories;
+    }),
 });

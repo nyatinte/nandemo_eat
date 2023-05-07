@@ -1,13 +1,11 @@
-import { type AppType } from "next/app";
-
-import { api } from "@/utils/api";
-
 import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { type AppType } from "next/app";
 import { Zen_Maru_Gothic } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 import { Header } from "@/components/Layout/Header";
+import { api } from "@/utils/api";
 
 const zen_maru_gothic = Zen_Maru_Gothic({
   weight: ["400", "700"],

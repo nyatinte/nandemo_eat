@@ -3,7 +3,7 @@ import { useAtom, useSetAtom } from "jotai";
 import { useCallback, type FC, useEffect } from "react";
 import { toast } from "react-hot-toast";
 
-import { setCategoryAtom } from "@/atoms/choiceAtom";
+import { categoryAtom } from "@/atoms/choiceAtom";
 import { sectionAtom } from "@/atoms/sectionAtom";
 import { RottleIn } from "@/components/Elements";
 import { LoadingPage } from "@/components/Layout";
@@ -19,7 +19,7 @@ export const CategorySection: FC = () => {
     isLoading,
     error,
   } = api.category.getRandom.useQuery();
-  const [choice, setChoice] = useAtom(setCategoryAtom);
+  const [choice, setChoice] = useAtom(categoryAtom);
   useEffect(() => {
     setChoice("");
   }, [setChoice]);

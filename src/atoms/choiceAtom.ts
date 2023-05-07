@@ -18,8 +18,8 @@ export type Choice = z.infer<typeof choiceSchema>;
  * 料理提案画面のユーザーの選択を管理するAtom
  * ---
  * ### 関連Atom
- * @see {@link setCategoryAtom} カテゴリをセットする
- * @see {@link setSubCategoryAtom} サブカテゴリをセットする
+ * @see {@link categoryAtom} カテゴリをセットする
+ * @see {@link subCategoryAtom} サブカテゴリをセットする
  */
 export const choiceAtom = atom<Choice>({
   category: "",
@@ -27,12 +27,12 @@ export const choiceAtom = atom<Choice>({
 });
 
 /**
- * カテゴリをセットする
+ * カテゴリを扱うatom
  * ---
  * ### 関連Atom
  * @see {@link choiceAtom} ユーザーの選択を管理するAtom 派生元
  */
-export const setCategoryAtom = atom(
+export const categoryAtom = atom(
   (get) => get(choiceAtom).category,
   (get, set, category: string) => {
     const choice = get(choiceAtom);
@@ -44,12 +44,12 @@ export const setCategoryAtom = atom(
 );
 
 /**
- * サブカテゴリをセットする
+ * サブカテゴリを扱うatom
  * ---
  * ### 関連Atom
  * @see {@link choiceAtom} ユーザーの選択を管理するAtom 派生元
  */
-export const setSubCategoryAtom = atom(
+export const subCategoryAtom = atom(
   (get) => get(choiceAtom).subCategory,
   (get, set, subCategory: string) => {
     const choice = get(choiceAtom);

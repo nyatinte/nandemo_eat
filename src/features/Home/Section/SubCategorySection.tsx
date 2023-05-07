@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { useAtom, useSetAtom } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useCallback, type FC, useEffect } from "react";
 import { toast } from "react-hot-toast";
 
-import { setSubCategoryAtom } from "@/atoms/choiceAtom";
+import { categoryAtom, subCategoryAtom } from "@/atoms/choiceAtom";
 import { sectionAtom } from "@/atoms/sectionAtom";
 import { RottleIn } from "@/components/Elements";
 import { LoadingPage } from "@/components/Layout";
@@ -14,12 +14,16 @@ import { api } from "@/utils/api";
  * SubCategory section
  */
 export const SubCategorySection: FC = () => {
+  const category = useAtomValue(categoryAtom);
   const {
     data: subCategories,
     isLoading,
     error,
-  } = api.subCategory.getRandom.useQuery();
-  const [choice, setChoice] = useAtom(setSubCategoryAtom);
+  } = api.subCategory.getRandomByCategory.useQuery({
+    category,
+  });
+
+  const [choice, setChoice] = useAtom(subCategoryAtom);
   useEffect(() => {
     setChoice("");
   }, [setChoice]);
