@@ -7,6 +7,7 @@ import { z } from "zod";
 export const choiceSchema = z.object({
   category: z.string(),
   subCategory: z.string(),
+  dish: z.string(),
 });
 
 /**
@@ -24,6 +25,7 @@ export type Choice = z.infer<typeof choiceSchema>;
 export const choiceAtom = atom<Choice>({
   category: "",
   subCategory: "",
+  dish: "",
 });
 
 /**
@@ -56,6 +58,23 @@ export const subCategoryAtom = atom(
     set(choiceAtom, {
       ...choice,
       subCategory,
+    });
+  }
+);
+
+/**
+ * 料理を扱うatom
+ * ---
+ * ### 関連Atom
+ *  @see {@link choiceAtom} ユーザーの選択を管理するAtom 派生元
+ */
+export const dishAtom = atom(
+  (get) => get(choiceAtom).dish,
+  (get, set, dish: string) => {
+    const choice = get(choiceAtom);
+    set(choiceAtom, {
+      ...choice,
+      dish,
     });
   }
 );

@@ -4,8 +4,13 @@ import Head from "next/head";
 import { useEffect, useMemo } from "react";
 
 import { sectionAtom } from "@/atoms/sectionAtom";
-import { HeroSection, CategorySection } from "@/features/Home/Section";
-import { SubCategorySection } from "@/features/Home/Section/SubCategorySection";
+import {
+  HeroSection,
+  CategorySection,
+  SubCategorySection,
+  DishSection,
+  DoneSection,
+} from "@/features/Home/Section";
 
 const Home: NextPage = () => {
   const [sectionIndex, setSection] = useAtom(sectionAtom);
@@ -17,6 +22,10 @@ const Home: NextPage = () => {
         return CategorySection;
       case "subCategory":
         return SubCategorySection;
+      case "dish":
+        return DishSection;
+      case "done":
+        return DoneSection;
       default:
         return HeroSection;
     }
@@ -24,7 +33,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     setSection("hero");
-  }, []);
+  }, [setSection]);
 
   return (
     <>
@@ -37,9 +46,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Section />
-      <button className="btn-secondary" onClick={() => setSection("hero")}>
-        戻る
-      </button>
     </>
   );
 };

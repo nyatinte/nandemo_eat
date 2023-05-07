@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { choiceSchema } from "@/atoms/choiceAtom";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const dishRouter = createTRPCRouter({
@@ -92,5 +93,56 @@ export const dishRouter = createTRPCRouter({
           },
         },
       });
+    }),
+
+  getDishByChoice: publicProcedure
+    .input(choiceSchema)
+    .query(async ({ input, ctx }) => {
+      if (ctx.userId) {
+        const dislike = await ctx.prisma.dislike.findMany({
+          where: {
+            userId: ctx.userId,
+          },
+          include: {
+            ingredient: true,
+          },
+        });
+
+        const dishs = await ctx.prisma.dish.findMany({
+          where: {
+            category: {
+              name: input.category,
+            },
+            subCategories: {
+              some: {
+                name: input.subCategory,
+              },
+            },
+            ingredients: {
+              none: {
+                name: {
+                  in: dislike.map((dislike) => dislike.ingredient.name),
+                },
+              },
+            },
+          },
+        });
+
+        return dishs.sort(() => Math.random() - Math.random()).slice(0, 3);
+      }
+      const dishs = await ctx.prisma.dish.findMany({
+        where: {
+          category: {
+            name: input.category,
+          },
+          subCategories: {
+            some: {
+              name: input.subCategory,
+            },
+          },
+        },
+      });
+
+      return dishs.sort(() => Math.random() - Math.random()).slice(0, 3);
     }),
 });
