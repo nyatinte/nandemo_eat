@@ -1,10 +1,8 @@
 import type { FC } from "react";
-import { motion } from "framer-motion";
+import { type AnimationProps, motion } from "framer-motion";
 import { MenuItem } from "../MenuItem";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { Link, type LinkProps } from "@/components/Elements";
-import { useAtomValue } from "jotai";
-import { sidebarOpenAtom } from "@/atoms/sidebarOpenAtom";
 
 const variants = {
   open: {
@@ -13,7 +11,7 @@ const variants = {
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
-};
+} satisfies AnimationProps["variants"];
 
 const linkItems: LinkProps[] = [
   {
@@ -34,13 +32,8 @@ const linkItems: LinkProps[] = [
  */
 export const Navigation: FC = () => {
   const user = useUser();
-  const isSidebarOpen = useAtomValue(sidebarOpenAtom);
   return (
-    <motion.ul
-      variants={variants}
-      className="absolute top-24 w-72 p-6"
-      style={{ pointerEvents: isSidebarOpen ? "auto" : "none" }}
-    >
+    <motion.ul variants={variants} className="absolute top-24 w-72 p-6">
       {linkItems.map((item) => (
         <MenuItem key={item.href}>
           <Link href={item.href} label={item.label} />

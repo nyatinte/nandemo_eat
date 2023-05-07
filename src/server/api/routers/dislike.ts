@@ -8,6 +8,9 @@ export const dislikeRouter = createTRPCRouter({
       where: {
         userId: ctx.userId,
       },
+      include: {
+        ingredient: true,
+      },
     });
   }),
 
@@ -17,7 +20,7 @@ export const dislikeRouter = createTRPCRouter({
         name: z.string(),
       })
     )
-    .query(({ ctx, input }) => {
+    .mutation(({ ctx, input }) => {
       return ctx.prisma.dislike.create({
         data: {
           userId: ctx.userId,
@@ -31,6 +34,36 @@ export const dislikeRouter = createTRPCRouter({
               },
             },
           },
+        },
+      });
+    }),
+
+  updateMany: privateProcedure
+    .input(
+      z.object({
+        ingredients: z.array(z.string()),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.dislike.deleteMany({
+        where: {
+          userId: ctx.userId,
+        },
+      });
+
+      await ctx.prisma.dislike.createMany({
+        data: input.ingredients.map((ingredient) => ({
+          userId: ctx.userId,
+          ingredientName: ingredient,
+        })),
+      });
+
+      return ctx.prisma.dislike.findMany({
+        where: {
+          userId: ctx.userId,
+        },
+        include: {
+          ingredient: true,
         },
       });
     }),

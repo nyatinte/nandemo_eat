@@ -8,6 +8,9 @@ export default {
       height: {
         "without-header": "calc(100vh - 80px)",
       },
+      maxHeight: {
+        "without-header": "calc(100vh - 80px)",
+      }
     },
   },
   plugins: [daisyui],

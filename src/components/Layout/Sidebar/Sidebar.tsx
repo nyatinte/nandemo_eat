@@ -23,6 +23,7 @@ const sidebar = {
       stiffness: 400,
       damping: 40,
     },
+    scale: 0,
   },
 } satisfies AnimationProps["variants"];
 
