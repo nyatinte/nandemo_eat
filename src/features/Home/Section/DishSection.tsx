@@ -46,6 +46,7 @@ export const DishSection: FC = () => {
     setSection("hero");
     return <LoadingPage />;
   }
+
   const handleClickRandom = () => {
     if (!dishs) return;
     const randomDish = dishs[Math.floor(Math.random() * dishs.length)];
@@ -86,7 +87,7 @@ export const DishSection: FC = () => {
         </motion.h1>
         {dishs?.map((dish, index) => (
           <RottleIn
-            isDroped={chooseDish ? chooseDish === dish.name : false}
+            isDroped={chooseDish ? chooseDish !== dish.name : false}
             id={dish.name}
             key={dish.id}
             onClick={handleClick}
