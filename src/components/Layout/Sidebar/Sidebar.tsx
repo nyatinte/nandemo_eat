@@ -3,8 +3,8 @@ import { type AnimationProps, motion } from "framer-motion";
 import { useDimensions } from "@/hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { useAtom, useAtomValue } from "jotai";
-import { sidebarOpenAtom, toggleSidebarAtom } from "@/atoms/sidebarOpenAtom";
+import { useAtom } from "jotai";
+import { toggleSidebarAtom } from "@/atoms/sidebarOpenAtom";
 
 const sidebar = {
   open: (height = 1000) => ({

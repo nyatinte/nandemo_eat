@@ -28,11 +28,16 @@ const Home: NextPage = () => {
           },
           visible: {
             opacity: 1,
+
             transition: {
               duration: 0.5,
+              delay: 0.5,
               delayChildren: 0.5,
             },
           },
+        }}
+        transition={{
+          delayChildren: 0.5,
         }}
       >
         <div className="hero-content text-center">
