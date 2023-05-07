@@ -121,7 +121,11 @@ const DislikePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>苦手なもの登録</title>
+        <title>苦手なもの登録 | なんでもEAT</title>
+        <meta
+          name="description"
+          content="苦手なものを登録することで、その食材を含む料理を表示しないようにします。"
+        />
       </Head>
       <Container>
         <h1 className="px-4 py-2 text-lg font-bold">苦手なもの登録</h1>

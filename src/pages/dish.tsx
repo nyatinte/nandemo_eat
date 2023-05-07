@@ -18,7 +18,7 @@ const Dish: NextPage = () => {
   return (
     <>
       <Head>
-        <title>なんでもEAT | 料理を追加する</title>
+        <title>料理を追加する | なんでもEAT</title>
         <meta name="description" content="料理を追加する" />
       </Head>
       <Container>
