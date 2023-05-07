@@ -35,4 +35,12 @@ export const subCategoryRouter = createTRPCRouter({
         },
       });
     }),
+
+  getRandom: publicProcedure.query(async ({ ctx }) => {
+    const subCategories = await ctx.prisma.subCategory.findMany({});
+    const randomSubCategories = subCategories
+      .sort(() => Math.random() - Math.random())
+      .slice(0, 3);
+    return randomSubCategories;
+  }),
 });

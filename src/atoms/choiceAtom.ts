@@ -19,6 +19,7 @@ export type Choice = z.infer<typeof choiceSchema>;
  * ---
  * ### 関連Atom
  * @see {@link setCategoryAtom} カテゴリをセットする
+ * @see {@link setSubCategoryAtom} サブカテゴリをセットする
  */
 export const choiceAtom = atom<Choice>({
   category: "",
@@ -38,6 +39,23 @@ export const setCategoryAtom = atom(
     set(choiceAtom, {
       ...choice,
       category,
+    });
+  }
+);
+
+/**
+ * サブカテゴリをセットする
+ * ---
+ * ### 関連Atom
+ * @see {@link choiceAtom} ユーザーの選択を管理するAtom 派生元
+ */
+export const setSubCategoryAtom = atom(
+  (get) => get(choiceAtom).subCategory,
+  (get, set, subCategory: string) => {
+    const choice = get(choiceAtom);
+    set(choiceAtom, {
+      ...choice,
+      subCategory,
     });
   }
 );

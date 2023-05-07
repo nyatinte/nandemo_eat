@@ -5,6 +5,7 @@ import { useEffect, useMemo } from "react";
 
 import { sectionAtom } from "@/atoms/sectionAtom";
 import { HeroSection, CategorySection } from "@/features/Home/Section";
+import { SubCategorySection } from "@/features/Home/Section/SubCategorySection";
 
 const Home: NextPage = () => {
   const [sectionIndex, setSection] = useAtom(sectionAtom);
@@ -14,6 +15,8 @@ const Home: NextPage = () => {
         return HeroSection;
       case "category":
         return CategorySection;
+      case "subCategory":
+        return SubCategorySection;
       default:
         return HeroSection;
     }
