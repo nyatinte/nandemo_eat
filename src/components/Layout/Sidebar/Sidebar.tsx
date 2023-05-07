@@ -23,7 +23,6 @@ const sidebar = {
       stiffness: 400,
       damping: 40,
     },
-    scale: 0,
   },
 } satisfies AnimationProps["variants"];
 
@@ -42,7 +41,18 @@ export const Sidebar: FC = () => {
         animate={isOpen ? "open" : "closed"}
         custom={height}
         ref={containerRef}
-        className="absolute left-0 top-0 z-10 h-screen w-72"
+        className="absolute left-0 top-0 z-10 w-72"
+        variants={{
+          open: {
+            height: "100vh",
+          },
+          closed: {
+            height: "80px",
+            transition: {
+              delay: 1,
+            },
+          },
+        }}
       >
         <motion.div
           className="absolute bottom-0 left-0 top-0 w-72 bg-white"

@@ -1,6 +1,7 @@
 import { LoadingSpinner } from "@/components/Elements";
 import { XmarkIcon } from "@/components/Elements/Icon/XmarkIcon";
 import { LoadingPage } from "@/components/Layout";
+import { Container } from "@/components/Layout/Container";
 import { type SelectOptions } from "@/types/SelectOption";
 import { api } from "@/utils/api";
 import { useUser } from "@clerk/nextjs";
@@ -110,9 +111,9 @@ const DislikePage: NextPage = () => {
   if (!user.isSignedIn) {
     return (
       <>
-        <div>
+        <Container>
           苦手なもの登録機能を利用するためにはログインが必要です。お手持ちのGoogleアカウント、Lineアカウントなどで簡単にログインできます。
-        </div>
+        </Container>
       </>
     );
   }
@@ -121,60 +122,62 @@ const DislikePage: NextPage = () => {
       <Head>
         <title>苦手なもの登録</title>
       </Head>
-      <h1 className="px-4 py-2 text-lg font-bold">苦手なもの登録</h1>
-      <div className="container flex items-start justify-center gap-4 p-4 sm:p-8">
-        {/* max-h-without-headerからp-8を引く */}
-        <ul className="max-h-[calc(100vh-80px-32px)] divide-y divide-gray-200 overflow-y-auto rounded-sm bg-white">
-          {dislikeIngredients?.map((ingredient) => (
-            <li
-              className="flex w-52 max-w-sm items-center justify-between p-4"
-              key={ingredient}
-            >
-              <span className="text-lg">{ingredient}</span>
-              <button
-                className="p-2"
-                onClick={handleClickDeleteBtn}
-                name={ingredient}
+      <Container>
+        <h1 className="px-4 py-2 text-lg font-bold">苦手なもの登録</h1>
+        <div className="flex items-start justify-center gap-4">
+          {/* max-h-without-headerからp-8を引く */}
+          <ul className="max-h-[calc(100vh-80px-32px)] divide-y divide-gray-200 overflow-y-auto rounded-sm bg-white">
+            {dislikeIngredients?.map((ingredient) => (
+              <li
+                className="flex w-52 max-w-sm items-center justify-between p-4"
+                key={ingredient}
               >
-                <XmarkIcon />
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className="flex w-[45vw] flex-col justify-center gap-4 sm:w-auto">
-          <CreatableSelect
-            closeMenuOnSelect={false}
-            options={options}
-            onCreateOption={handleCreate}
-            value={selectValue}
-            onChange={(value) => {
-              setSelectValue([]);
-              if (value?.value === undefined) return;
-              setValue(
-                "ingredients",
-                getValues("ingredients").concat(value?.value)
-              );
-            }}
-            formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
-            placeholder="食材を選択してください"
-          />
-          <button
-            className="btn-primary btn w-full"
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
-            onClick={handleSubmit(onSubmit, onSubmitError)}
-          >
-            {isSubmitting ? <LoadingSpinner /> : "更新"}
-          </button>
-          <button
-            className="btn w-full"
-            onClick={() =>
-              reset({ ingredients: dislike?.map((d) => d.ingredient.name) })
-            }
-          >
-            変更前に戻す
-          </button>
+                <span className="text-lg">{ingredient}</span>
+                <button
+                  className="p-2"
+                  onClick={handleClickDeleteBtn}
+                  name={ingredient}
+                >
+                  <XmarkIcon />
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className="flex w-[45vw] flex-col justify-center gap-4 sm:w-auto">
+            <CreatableSelect
+              closeMenuOnSelect={false}
+              options={options}
+              onCreateOption={handleCreate}
+              value={selectValue}
+              onChange={(value) => {
+                setSelectValue([]);
+                if (value?.value === undefined) return;
+                setValue(
+                  "ingredients",
+                  getValues("ingredients").concat(value?.value)
+                );
+              }}
+              formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
+              placeholder="食材を選択してください"
+            />
+            <button
+              className="btn-primary btn w-full"
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
+              onClick={handleSubmit(onSubmit, onSubmitError)}
+            >
+              {isSubmitting ? <LoadingSpinner /> : "更新"}
+            </button>
+            <button
+              className="btn w-full"
+              onClick={() =>
+                reset({ ingredients: dislike?.map((d) => d.ingredient.name) })
+              }
+            >
+              変更前に戻す
+            </button>
+          </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

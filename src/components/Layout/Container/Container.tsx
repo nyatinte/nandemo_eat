@@ -4,5 +4,9 @@ export type ContainerProps = { children: React.ReactNode };
  * Container
  */
 export const Container: FC<ContainerProps> = (props) => {
-  return <div className="container max-w-sm p-4 sm:p-8">{props.children}</div>;
+  return (
+    <div className="container mx-auto w-screen max-w-xl p-4 sm:p-8">
+      {props.children}
+    </div>
+  );
 };
