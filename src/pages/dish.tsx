@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { toast } from "react-hot-toast";
 
 import { Container } from "@/components/Layout/Container";
 import { LoadingPage } from "@/components/Layout/LoadingPage";
@@ -9,7 +10,8 @@ import { api } from "@/utils/api";
 const Dish: NextPage = () => {
   const { data, isError } = api.dish.getAll.useQuery();
   if (isError) {
-    return <div>error</div>;
+    toast.error("エラーが発生しました。再度お試しください。");
+    return <LoadingPage />;
   }
   if (!data) {
     return <LoadingPage />;

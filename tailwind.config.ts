@@ -11,6 +11,9 @@ export default {
       maxHeight: {
         "without-header": "calc(100vh - 80px)",
       },
+      minHeight: {
+        "without-header": "calc(100vh - 80px)",
+      },
     },
   },
   plugins: [daisyui],
