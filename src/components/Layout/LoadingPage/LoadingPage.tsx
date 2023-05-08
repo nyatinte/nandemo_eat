@@ -7,7 +7,7 @@ import type { FC } from "react";
  */
 export const LoadingPage: FC = () => {
   return (
-    <div className="absolute left-0 top-0 grid h-screen w-screen place-content-center">
+    <div className="grid h-without-header w-screen place-content-center">
       <LoadingSpinner />
     </div>
   );

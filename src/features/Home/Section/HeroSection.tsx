@@ -21,7 +21,7 @@ export const HeroSection: FC = () => {
   }, [setSection]);
   return (
     <motion.div
-      className="hero -mt-10 h-without-header"
+      className="hero  h-without-header"
       initial="hidden"
       animate={isCurrentSection ? "visible" : "hidden"}
       variants={{

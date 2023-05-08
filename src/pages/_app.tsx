@@ -5,6 +5,7 @@ import { Zen_Maru_Gothic } from "next/font/google";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 
+import { Footer } from "@/components/Layout/Footer";
 import { Header } from "@/components/Layout/Header";
 import { api } from "@/utils/api";
 
@@ -27,6 +28,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <Toaster />
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </main>
     </ClerkProvider>
   );
