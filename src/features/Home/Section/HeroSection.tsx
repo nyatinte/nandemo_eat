@@ -1,7 +1,8 @@
 import { type MotionProps, motion } from "framer-motion";
-import { useAtom } from "jotai";
-import { useCallback, type FC } from "react";
+import { useAtom, useSetAtom } from "jotai";
+import { useCallback, type FC, useEffect } from "react";
 
+import { choiceAtom } from "@/atoms/choiceAtom";
 import { sectionAtom } from "@/atoms/sectionAtom";
 
 const chatBubbleVariants = {
@@ -19,6 +20,17 @@ export const HeroSection: FC = () => {
   const handleClickBtn = useCallback(() => {
     setSection("category");
   }, [setSection]);
+
+  const setChoice = useSetAtom(choiceAtom);
+  useEffect(() => {
+    setChoice({
+      category: "",
+      subCategory: "",
+      dish: "",
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <motion.div
       className="hero  h-without-header"

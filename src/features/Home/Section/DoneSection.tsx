@@ -13,7 +13,7 @@ export const DoneSection: FC = () => {
   const setSection = useSetAtom(sectionAtom);
   const dish = useAtomValue(dishAtom);
   const handleClick = () => {
-    setSection("hero");
+    setSection("category");
   };
   return (
     <Container>
@@ -44,7 +44,7 @@ export const DoneSection: FC = () => {
           です！ 早速食べに行きましょう！
         </h1>
 
-        <div className="flex flex-col gap-4">
+        <div className="my-4 flex flex-col gap-4">
           <LinkWithIcon
             label="付近のお店を探す"
             className="btn-secondary text-lg"
@@ -60,7 +60,7 @@ export const DoneSection: FC = () => {
         </div>
 
         <button
-          className="btn-primary btn-wide btn mx-auto mt-4 text-lg"
+          className="btn-primary btn-wide btn mx-auto text-lg"
           onClick={handleClick}
         >
           最初から

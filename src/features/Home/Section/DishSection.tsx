@@ -20,7 +20,10 @@ export const DishSection: FC = () => {
     data: dishs,
     isLoading,
     error,
-  } = api.dish.getDishByChoice.useQuery(choice);
+  } = api.dish.getDishByChoice.useQuery({
+    category: choice.category,
+    subCategory: choice.subCategory,
+  });
 
   const setSection = useSetAtom(sectionAtom);
   const handleClick = useCallback(
@@ -36,11 +39,6 @@ export const DishSection: FC = () => {
 
   if (isLoading) return <LoadingPage />;
   if (error) {
-    toast.error("エラーが発生しました。再度お試しください。");
-    setSection("hero");
-    return <LoadingPage />;
-  }
-  if (dishs.length === 0) {
     toast.error("エラーが発生しました。再度お試しください。");
     setSection("hero");
     return <LoadingPage />;
@@ -66,7 +64,7 @@ export const DishSection: FC = () => {
       <motion.div
         className="flex flex-wrap justify-center gap-4"
         initial="hidden"
-        animate={"visible"}
+        animate="visible"
         variants={{
           hidden: {
             opacity: 0,
@@ -86,11 +84,13 @@ export const DishSection: FC = () => {
       >
         {dishs?.map((dish, index) => (
           <RottleIn
-            isDroped={chooseDish ? chooseDish !== dish.name : false}
+            isDroped={chooseDish === "" ? false : chooseDish !== dish.name}
             id={dish.name}
             key={dish.id}
             onClick={handleClick}
             delay={index * 0.5}
+            role="button"
+            tabIndex={0}
           >
             {dish.name}
           </RottleIn>

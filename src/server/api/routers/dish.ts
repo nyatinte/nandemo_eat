@@ -1,3 +1,4 @@
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 import { choiceSchema } from "@/atoms/choiceAtom";
@@ -96,7 +97,7 @@ export const dishRouter = createTRPCRouter({
     }),
 
   getDishByChoice: publicProcedure
-    .input(choiceSchema)
+    .input(choiceSchema.omit({ dish: true }))
     .query(async ({ input, ctx }) => {
       if (ctx.userId) {
         const dislike = await ctx.prisma.dislike.findMany({
@@ -127,6 +128,12 @@ export const dishRouter = createTRPCRouter({
             },
           },
         });
+        if (dishs.length === 0) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "No dish found",
+          });
+        }
 
         return dishs.sort(() => Math.random() - Math.random()).slice(0, 3);
       }
@@ -142,6 +149,13 @@ export const dishRouter = createTRPCRouter({
           },
         },
       });
+
+      if (dishs.length === 0) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "No dish found",
+        });
+      }
 
       return dishs.sort(() => Math.random() - Math.random()).slice(0, 3);
     }),

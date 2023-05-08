@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
+import { choiceAtom } from "@/atoms/choiceAtom";
 import { type Section, sectionAtom } from "@/atoms/sectionAtom";
 import {
   HeroSection,
@@ -16,6 +17,8 @@ import {
 
 const Home: NextPage = () => {
   const [sectionIndex, setSection] = useAtom(sectionAtom);
+  const setChoice = useSetAtom(choiceAtom);
+
   const Section = useMemo(() => {
     switch (sectionIndex) {
       case "hero":
@@ -33,6 +36,15 @@ const Home: NextPage = () => {
     }
   }, [sectionIndex]);
 
+  useEffect(() => {
+    setChoice({
+      category: "",
+      subCategory: "",
+      dish: "",
+    });
+    setSection("hero");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const SectionStep = useMemo(() => {
     const steps: Section[] = ["category", "subCategory", "dish", "done"];
     const index = steps.findIndex((step) => step === sectionIndex);
@@ -55,10 +67,6 @@ const Home: NextPage = () => {
       </motion.ul>
     );
   }, [sectionIndex]);
-
-  useEffect(() => {
-    setSection("hero");
-  }, [setSection]);
 
   return (
     <>

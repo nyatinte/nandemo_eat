@@ -82,6 +82,8 @@ export const SubCategorySection: FC = () => {
             key={subCategory.id}
             onClick={handleClick}
             delay={index * 0.5}
+            role="button"
+            tabIndex={0}
           >
             {subCategory.name}
           </RottleIn>

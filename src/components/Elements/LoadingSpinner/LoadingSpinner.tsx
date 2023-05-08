@@ -23,6 +23,7 @@ export const LoadingSpinner: FC<LoadingSpinnerProps> = ({
   };
   return (
     <BallTriangle
+      wrapperClass="p-4"
       height={sizeItems[size]}
       width={sizeItems[size]}
       radius={6}
