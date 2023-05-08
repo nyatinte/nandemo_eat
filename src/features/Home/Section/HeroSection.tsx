@@ -111,7 +111,10 @@ export const HeroSection: FC = () => {
                 bounce: 0.25,
               }}
             >
-              <button className="btn-primary btn" onClick={handleClickBtn}>
+              <button
+                className="btn-primary btn-wide btn text-lg"
+                onClick={handleClickBtn}
+              >
                 使ってみる
               </button>
             </motion.div>

@@ -4,15 +4,17 @@ import { type FC } from "react";
 import { BiRestaurant } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa";
 
-import { dishAtom } from "@/atoms/choiceAtom";
+import { choiceAtom, dishAtom } from "@/atoms/choiceAtom";
 import { sectionAtom } from "@/atoms/sectionAtom";
 import { LinkWithIcon } from "@/components/Elements/LinkWithIcon";
 import { Container } from "@/components/Layout/Container";
 
 export const DoneSection: FC = () => {
+  const setChoice = useSetAtom(choiceAtom);
   const setSection = useSetAtom(sectionAtom);
   const dish = useAtomValue(dishAtom);
   const handleClick = () => {
+    setChoice({ category: "", subCategory: "", dish: "" });
     setSection("category");
   };
   return (
