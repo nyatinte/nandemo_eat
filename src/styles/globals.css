@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply h-screen bg-orange-50;
+  @apply h-screen bg-bg;
 }

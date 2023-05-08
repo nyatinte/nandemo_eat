@@ -14,6 +14,9 @@ export default {
       minHeight: {
         "without-header": "calc(100vh - 80px)",
       },
+      colors: {
+        bg: "#FFF7ED",
+      },
     },
   },
   plugins: [daisyui],
