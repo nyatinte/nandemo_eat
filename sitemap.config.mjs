@@ -4,7 +4,7 @@ const config = {
   changefreq: "weekly",
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  outDir: "./out",
+  outDir: "public",
 };
 
 export default config;
