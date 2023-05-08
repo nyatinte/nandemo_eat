@@ -1,4 +1,4 @@
-import { useUser } from "@clerk/nextjs";
+import { SignInButton, useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type NextPage } from "next";
 import { NextSeo } from "next-seo";
@@ -27,7 +27,14 @@ const DislikePage: NextPage = () => {
   const { data, isError } = api.ingredient.getAll.useQuery();
   const { mutate, isLoading } = api.ingredient.create.useMutation();
   const { data: dislike, isLoading: isDislikeLoading } =
-    api.dislike.getAll.useQuery();
+    api.dislike.getAll.useQuery(undefined, {
+      retry: (_count, error) => {
+        if (error?.data?.code === "UNAUTHORIZED") {
+          return false;
+        }
+        return true;
+      },
+    });
   const { mutate: dislikeMutate } = api.dislike.updateMany.useMutation();
   const ctx = api.useContext();
 
@@ -80,12 +87,10 @@ const DislikePage: NextPage = () => {
     );
   }, [dislikeIngredients, dislikeMutate]);
 
-  const onSubmitError: SubmitErrorHandler<z.infer<typeof schema>> = useCallback(
-    (errors) => {
+  const onSubmitError: SubmitErrorHandler<z.infer<typeof schema>> =
+    useCallback(() => {
       toast.error("エラーが発生しました");
-    },
-    []
-  );
+    }, []);
 
   const handleClickDeleteBtn = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -114,7 +119,14 @@ const DislikePage: NextPage = () => {
       <>
         <NextSeo title="苦手なものを登録する | なんでもEAT" />
         <Container>
-          苦手なもの登録機能を利用するためにはログインが必要です。お手持ちのGoogleアカウント、Lineアカウントなどで簡単にログインできます。
+          <p>
+            苦手なもの登録機能を利用するためには
+            <span className="font-bold">ログインが必要</span>
+            です。お手持ちのGoogleアカウント、Lineアカウントなどで簡単にログインできます。
+          </p>
+          <SignInButton>
+            <button className="btn-wide btn text-lg">ログインする</button>
+          </SignInButton>
         </Container>
       </>
     );
