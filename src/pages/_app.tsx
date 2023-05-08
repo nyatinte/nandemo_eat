@@ -18,6 +18,10 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <ClerkProvider>
       <Head>
+        <meta
+          name="google-site-verification"
+          content="Aaa6MgmHbYrF4JlauLQeoDQ1qtIgdYpMX0GzzmEcNNo"
+        />
         <link
           rel="apple-touch-icon"
           type="image/png"
