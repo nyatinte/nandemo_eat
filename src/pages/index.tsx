@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   }, [sectionIndex]);
 
   const SectionStep = useMemo(() => {
-    const steps: Section[] = ["category", "subCategory", "dish"];
+    const steps: Section[] = ["category", "subCategory", "dish", "done"];
     const index = steps.findIndex((step) => step === sectionIndex);
     return (
       <motion.ul
@@ -48,6 +48,10 @@ const Home: NextPage = () => {
           サブカテゴリ
         </li>
         <li className={twMerge("step", index >= 2 && "step-primary")}>料理</li>
+        <li
+          data-content="★"
+          className={twMerge("step", sectionIndex === "done" && "step-primary")}
+        />
       </motion.ul>
     );
   }, [sectionIndex]);

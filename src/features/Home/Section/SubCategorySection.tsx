@@ -47,8 +47,14 @@ export const SubCategorySection: FC = () => {
   }
   return (
     <Container>
+      <motion.h1
+        className="mb-10 mt-20 text-center text-2xl font-bold"
+        animate={{ opacity: 1, transition: { delay: 1.5 } }}
+      >
+        サブカテゴリを選択しましょう
+      </motion.h1>
       <motion.div
-        className="mt-20 flex flex-wrap justify-center gap-4"
+        className="flex flex-wrap justify-center gap-4"
         initial="hidden"
         animate={"visible"}
         variants={{
@@ -68,12 +74,6 @@ export const SubCategorySection: FC = () => {
           delayChildren: 1,
         }}
       >
-        <motion.h1
-          className="text-2xl font-bold"
-          animate={{ opacity: 1, transition: { delay: 1.5 } }}
-        >
-          サブカテゴリを選択しましょう
-        </motion.h1>
         {subCategories?.map((subCategory, index) => (
           <RottleIn
             isDroped={choice ? choice !== subCategory.name : false}
