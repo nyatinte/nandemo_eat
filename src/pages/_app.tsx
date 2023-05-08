@@ -3,6 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { type AppType } from "next/app";
 import { Zen_Maru_Gothic } from "next/font/google";
 import Head from "next/head";
+import { DefaultSeo } from "next-seo";
 import { Toaster } from "react-hot-toast";
 
 import { Footer } from "@/components/Layout/Footer";
@@ -24,6 +25,33 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         />
         <link rel="icon" type="image/png" href="/icon-192x192.png" />
       </Head>
+      <DefaultSeo
+        defaultTitle="なんでもEAT"
+        description="なんでもEATは、｢ご飯何がいい？｣｢なんでもいいよ｣というやり取りを解決するサービスです。"
+        openGraph={{
+          type: "website",
+          locale: "ja_JP",
+          title: "なんでもEAT",
+          description:
+            "なんでもEATは、｢ご飯何がいい？｣｢なんでもいいよ｣というやり取りを解決するサービスです。",
+          url: "https://nandemo-eat.vercel.app/",
+          site_name: "なんでもEAT",
+          images: [
+            {
+              url: "https://nandemo-eat.vercel.app/%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82EAT.png",
+              width: 800,
+              height: 800,
+              alt: "なんでもEAT",
+              type: "image/png",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+      />
       <main className={zen_maru_gothic.className}>
         <Toaster />
         <Header />

@@ -1,7 +1,7 @@
 import { useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type NextPage } from "next";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { useCallback, useEffect, useState } from "react";
 import {
   type SubmitHandler,
@@ -112,6 +112,7 @@ const DislikePage: NextPage = () => {
   if (!user.isSignedIn) {
     return (
       <>
+        <NextSeo title="苦手なものを登録する | なんでもEAT" />
         <Container>
           苦手なもの登録機能を利用するためにはログインが必要です。お手持ちのGoogleアカウント、Lineアカウントなどで簡単にログインできます。
         </Container>
@@ -120,13 +121,7 @@ const DislikePage: NextPage = () => {
   }
   return (
     <>
-      <Head>
-        <title>苦手なもの登録 | なんでもEAT</title>
-        <meta
-          name="description"
-          content="苦手なものを登録することで、その食材を含む料理を表示しないようにします。"
-        />
-      </Head>
+      <NextSeo title="苦手なものを登録する | なんでもEAT" />
       <Container>
         <h1 className="px-4 py-2 text-lg font-bold">苦手なもの登録</h1>
         <div className="flex items-start justify-center gap-4">

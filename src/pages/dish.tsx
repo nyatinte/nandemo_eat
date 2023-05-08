@@ -1,5 +1,5 @@
 import { type NextPage } from "next";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { toast } from "react-hot-toast";
 
 import { Container } from "@/components/Layout/Container";
@@ -19,10 +19,7 @@ const Dish: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>料理を追加する | なんでもEAT</title>
-        <meta name="description" content="料理を追加する" />
-      </Head>
+      <NextSeo title="料理を追加する | なんでもEAT" />
       <Container>
         <h1 className="px-4 py-2 text-lg font-bold">料理を追加する</h1>
         <p className="px-4 py-2 text-sm text-gray-500">
