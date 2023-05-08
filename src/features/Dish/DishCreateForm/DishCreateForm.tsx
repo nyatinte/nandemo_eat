@@ -55,18 +55,19 @@ export const DishCreateForm: FC = () => {
     control,
     handleSubmit,
     getValues,
+    reset,
     formState: { isSubmitting },
   } = useForm<DishCreateFormFields>({
     resolver: zodResolver(dishCreateFormSchema),
   });
 
   const onSubmit: SubmitHandler<DishCreateFormFields> = (data) => {
-    console.log(data);
     mutate(data, {
       onSuccess: (data) => {
         toast.success(data.name + "を作成しました");
       },
     });
+    reset();
   };
 
   const onSubmitError: SubmitErrorHandler<DishCreateFormFields> = (

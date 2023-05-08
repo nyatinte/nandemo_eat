@@ -55,12 +55,10 @@ export const CategoryCreatableSelect: FC<CategoryCreatableSelectProps> = ({
 
   return (
     <CreatableSelect
+      closeMenuOnSelect={true}
       options={options}
       {...field}
-      value={{
-        label: field.value,
-        value: field.value,
-      }}
+      value={options.find((option) => option.value === field.value)}
       onChange={(newValue) => {
         if (!newValue) {
           field.onChange("");
@@ -69,8 +67,8 @@ export const CategoryCreatableSelect: FC<CategoryCreatableSelectProps> = ({
         }
       }}
       onCreateOption={handleCreate}
-      placeholder="カテゴリを選択してください"
       formatCreateLabel={(inputValue) => `「${inputValue}」を追加`}
+      placeholder="カテゴリを選択してください"
     />
   );
 };
