@@ -55,7 +55,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <main className={zen_maru_gothic.className}>
         <Toaster />
         <Header />
-        <Component {...pageProps} />
+        <div className="min-h-without-header bg-bg">
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </main>
     </ClerkProvider>

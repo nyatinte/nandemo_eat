@@ -16,6 +16,7 @@ export default {
       },
       colors: {
         bg: "#FFF7ED",
+        twitter: "#1DA1F2",
       },
     },
   },
@@ -33,6 +34,7 @@ export default {
           success: "#36D399",
           warning: "#FBBD23",
           error: "#F87272",
+          twitter: "#1DA1F2",
         },
       },
     ],

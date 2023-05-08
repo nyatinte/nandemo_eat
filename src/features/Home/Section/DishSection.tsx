@@ -27,7 +27,6 @@ export const DishSection: FC = () => {
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       const chooseDish = e.currentTarget.id;
       setDish(chooseDish);
-
       setTimeout(() => {
         setSection("done");
       }, 1500);
@@ -98,7 +97,7 @@ export const DishSection: FC = () => {
         ))}
       </motion.div>
       <div className="mt-4 flex justify-center">
-        <button className="btn" onClick={handleClickRandom}>
+        <button className="btn" type="button" onClick={handleClickRandom}>
           おまかせ
         </button>
       </div>
