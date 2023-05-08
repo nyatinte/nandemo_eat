@@ -39,8 +39,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           images: [
             {
               url: "https://nandemo-eat.vercel.app/%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82EAT.png",
-              width: 800,
-              height: 800,
+              width: 400,
+              height: 400,
               alt: "なんでもEAT",
               type: "image/png",
             },
