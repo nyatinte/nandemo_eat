@@ -36,7 +36,8 @@ const config = {
         fixStyle: "inline-type-imports",
       },
     ],
-    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    // @see https://github.com/sweepline/eslint-plugin-unused-imports
+    "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
@@ -44,6 +45,16 @@ const config = {
         vars: "all",
         varsIgnorePattern: "^_",
         args: "after-used",
+        argsIgnorePattern: "^_",
+      },
+    ],
+    "unused-imports/no-unused-vars-ts": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+
         argsIgnorePattern: "^_",
       },
     ],
@@ -72,6 +83,7 @@ const config = {
         alphabetize: { order: "asc", caseInsensitive: true },
       },
     ],
+    "no-console": ["warn", { allow: ["error"] }],
   },
   settings: {
     "import/resolver": {
