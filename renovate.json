@@ -4,5 +4,6 @@
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "Asia/Tokyo",
   "automerge": true,
+  "rangeStrategy": "bump",
   "branchConcurrentLimit": 0
 }
