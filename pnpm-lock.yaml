@@ -148,8 +148,8 @@ devDependencies:
     specifier: ^2.27.5
     version: 2.27.5(@typescript-eslint/parser@5.56.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.36.0)
   eslint-plugin-storybook:
-    specifier: ^0.6.11
-    version: 0.6.11(eslint@8.36.0)(typescript@5.0.2)
+    specifier: ^0.6.12
+    version: 0.6.12(eslint@8.36.0)(typescript@5.0.2)
   eslint-plugin-unused-imports:
     specifier: ^2.0.0
     version: 2.0.0(@typescript-eslint/eslint-plugin@5.56.0)(eslint@8.36.0)
@@ -6745,8 +6745,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-storybook@0.6.11(eslint@8.36.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-lIVmCqQgA0bhcuS1yWYBFrnPHBKPEQI+LHPDtlN81UE1/17onCqgwUW7Nyt7gS2OHjCAiOR4npjTGEoe0hssKw==}
+  /eslint-plugin-storybook@0.6.12(eslint@8.36.0)(typescript@5.0.2):
+    resolution: {integrity: sha512-XbIvrq6hNVG6rpdBr+eBw63QhOMLpZneQVSooEDow8aQCWGCk/5vqtap1yxpVydNfSxi3S/3mBBRLQqKUqQRww==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
