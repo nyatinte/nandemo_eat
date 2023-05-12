@@ -136,8 +136,8 @@ devDependencies:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
   chromatic:
-    specifier: ^6.17.3
-    version: 6.17.3
+    specifier: ^6.17.4
+    version: 6.17.4
   eslint:
     specifier: ^8.36.0
     version: 8.36.0
@@ -5456,8 +5456,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@6.17.3:
-    resolution: {integrity: sha512-x6WAHLBqub/BYiGXEOsgw9T3m459SmwOvIz0Ra7rCriE2A9AqDKRmVdAEhzVud24ut6ehd54FJpDtArnR5/TbA==}
+  /chromatic@6.17.4:
+    resolution: {integrity: sha512-vnlvsv2lkp8BVtTn1OumJzqkDk2qB3pcGxEDIfZtVboKtzIPjnIlGa+c1fVKQe8NvHDU8R39k8klqgKHIXUVJw==}
     hasBin: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
