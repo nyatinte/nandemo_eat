@@ -1,7 +1,6 @@
-
 import { type FC, useCallback } from "react";
 import { type Control, useController } from "react-hook-form";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import CreatableSelect from "react-select/creatable";
 
 import { type DishCreateFormFields } from "@/features/Dish/DishCreateForm";

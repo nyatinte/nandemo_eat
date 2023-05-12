@@ -54,7 +54,6 @@ export const DishCreateForm: FC = () => {
     register,
     control,
     handleSubmit,
-    getValues,
     reset,
     formState: { isSubmitting },
   } = useForm<DishCreateFormFields>({
@@ -72,11 +71,8 @@ export const DishCreateForm: FC = () => {
 
   const onSubmitError: SubmitErrorHandler<DishCreateFormFields> = (
     errors,
-    e
+    _e
   ) => {
-    console.log(getValues());
-    console.error(errors);
-    console.error(e);
     for (const error of Object.values(errors)) {
       if (error.message) toast.error(error.message);
     }
