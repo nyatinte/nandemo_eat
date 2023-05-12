@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Footer } from "./Footer";
 
-import { Footer } from './Footer';
+import type { Meta, StoryObj } from "@storybook/react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Footer> = {
-  title: 'Components/Footer',
+  title: "Components/Footer",
   component: Footer,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     backgroundColor: {
-      control: 'color',
+      control: "color",
     },
   },
 };
@@ -21,6 +21,6 @@ type Story = StoryObj<typeof Footer>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Footer',
+    label: "Footer",
   },
 };

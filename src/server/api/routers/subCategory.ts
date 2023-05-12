@@ -48,8 +48,6 @@ export const subCategoryRouter = createTRPCRouter({
   getRandomByCategory: publicProcedure
     .input(z.object({ category: z.string() }))
     .query(async ({ ctx, input }) => {
-      console.group("getRandomByCategory");
-      console.log("input", input);
       const subCategories = await ctx.prisma.subCategory.findMany({});
 
       // カテゴリをもとに、該当のカテゴリとサブカテゴリをもつ料理があるかどうかを判定する。もし料理があれば、そのサブカテゴリを返す。
@@ -67,19 +65,14 @@ export const subCategoryRouter = createTRPCRouter({
             },
           },
         });
-        console.log("dish", dish);
         if (dish) {
-          console.groupEnd();
           subCategoriesByCategory.push(subCategory);
         }
       }
 
-      console.log("subCategoriesByCategory", subCategoriesByCategory);
       const randomSubCategories = subCategoriesByCategory
         .sort(() => Math.random() - Math.random())
         .slice(0, 3);
-      console.log("randomSubCategories", randomSubCategories);
-      console.groupEnd();
 
       return randomSubCategories;
     }),

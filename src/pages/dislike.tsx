@@ -8,7 +8,7 @@ import {
   useForm,
   type SubmitErrorHandler,
 } from "react-hook-form";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import CreatableSelect from "react-select/creatable";
 import { z } from "zod";
 
