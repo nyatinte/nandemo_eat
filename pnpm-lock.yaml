@@ -82,8 +82,8 @@ devDependencies:
     specifier: ^3.7.0
     version: 3.7.0(@markuplint/ml-core@3.8.0)(typescript@5.0.4)
   '@markuplint/react-spec':
-    specifier: ^3.7.0
-    version: 3.7.0(@markuplint/ml-core@3.8.0)
+    specifier: ^3.8.0
+    version: 3.8.0(@markuplint/ml-core@3.8.0)(typescript@5.0.4)
   '@mermaid-js/mermaid-cli':
     specifier: ^10.1.0
     version: 10.1.0(typescript@5.0.4)
@@ -2310,6 +2310,20 @@ packages:
       tslib: 2.5.0
     dev: true
 
+  /@markuplint/ml-spec@3.9.0(typescript@5.0.4):
+    resolution: {integrity: sha512-Mf8o81JAc9iL/w0Zw7CUW7pwbqLQN0buRtA5jEOqdCR5pDW8fIluHoT9hxlZFq+SoS2XDG2xBl7YYnDWDdGDAA==}
+    dependencies:
+      '@markuplint/ml-ast': 3.1.0
+      '@markuplint/types': 3.7.0(typescript@5.0.4)
+      dom-accessibility-api: 0.5.16
+      is-plain-object: 5.0.0
+      tslib: 2.5.0
+      type-fest: 3.10.0(typescript@5.0.4)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /@markuplint/parser-utils@3.6.1(@markuplint/ml-core@3.8.0):
     resolution: {integrity: sha512-m8Ce2pxd3LDg9EZOTxnV9wRJO7tS/R81oJU0LFKg1DN7Wzvr2DVqBRtLjqg0ROoLtbsT7vvl49z81f54m5Z7kQ==}
     peerDependencies:
@@ -2341,12 +2355,16 @@ packages:
       - typescript
     dev: true
 
-  /@markuplint/react-spec@3.7.0(@markuplint/ml-core@3.8.0):
-    resolution: {integrity: sha512-WUOXWJ8UiHFRaf7Tkq80+3AfYnWUNRh7tiTUFWkgwVn45sL70qS9v8VYOQdkXscqfHoagcLuzHc+kU37dveWAQ==}
+  /@markuplint/react-spec@3.8.0(@markuplint/ml-core@3.8.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-n1XkSFX5a4RsDmeIQMYxgrbn6xyLpObDRfTeeQpJ3UW9OiRh7pDQtMybWoIPCnOadd3tW8AFF/0a7IPoQGv3vA==}
     peerDependencies:
       '@markuplint/ml-core': 3.x
     dependencies:
       '@markuplint/ml-core': 3.8.0(typescript@5.0.4)
+      '@markuplint/ml-spec': 3.9.0(typescript@5.0.4)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /@markuplint/rules@3.8.0(typescript@5.0.4):
