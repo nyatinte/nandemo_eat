@@ -10,7 +10,7 @@
     "build": "next build && next-sitemap --config sitemap.config.mjs",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "lint:check": "eslint --ext .ts,.tsx --ignore-path .gitignore src",
+    "lint:check": "eslint './src/**/*.{ts,tsx}' --max-warnings=0",
     "lint:fix": "eslint --fix --ext .ts,.tsx --ignore-path .gitignore src",
     "start": "next start",
     "compgen": "hygen generator component",
