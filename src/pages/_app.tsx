@@ -15,7 +15,6 @@ const zen_maru_gothic = Zen_Maru_Gothic({
   subsets: ["latin"],
 });
 const MyApp: AppType = ({ Component, pageProps }) => {
-  console.log("hogehoge");
   return (
     <ClerkProvider>
       <Head>
