@@ -1,5 +1,3 @@
-# https://dev.classmethod.jp/articles/run-prettiereslint-on-ci-to-fail-workflow-on-violation/
-
 name: eslint
 
 on:
@@ -15,20 +13,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache CDK Dependency
-        uses: actions/cache@v3
-        id: cache_cdk_dependency_id
-        env:
-          cache-name: cache-cdk-dependency
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
+          version: 7
+          run_install: false
 
-      - name: Install Dependency
-        if: ${{ steps.cache_cdk_dependency_id.outputs.cache-hit != 'true' }}
-        run: pnpm i --silent
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
 
       - name: Lint
         run: |
-          pnpm lint:check
+          pnpm run lint:check
