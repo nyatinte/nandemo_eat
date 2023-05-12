@@ -1,4 +1,7 @@
 # [なんでもEAT](https://nandemo-eat.vercel.app/)
+#### 開発者Wiki, 技術スタックはこちら！
+- [技術スタック](https://github.com/nyatinte/nandemo_eat/wiki/%E6%8A%80%E8%A1%93%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF)
+- [開発のルール](https://github.com/nyatinte/nandemo_eat/wiki#:~:text=%E6%8A%80%E8%A1%93%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF-,%E9%96%8B%E7%99%BA%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB,-Add%20a%20custom)
 
 ### ｢ご飯何がいい？｣ ｢なんでもいいよ｣ のやり取りを解決します
 <img width="370" alt="image" src="https://github.com/nyatinte/nandemo_eat/assets/104000239/e92b773c-e763-4520-9292-b96501ed02b3">
@@ -23,10 +26,6 @@
 
 <img width="376" alt="image" src="https://github.com/nyatinte/nandemo_eat/assets/104000239/085277f1-aa0e-4065-ad43-f700613b2f68">
 
-
-#### 開発者Wiki, 技術スタックはこちら！
-- [技術スタック](https://github.com/nyatinte/nandemo_eat/wiki/%E6%8A%80%E8%A1%93%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF)
-- [開発のルール](https://github.com/nyatinte/nandemo_eat/wiki#:~:text=%E6%8A%80%E8%A1%93%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF-,%E9%96%8B%E7%99%BA%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB,-Add%20a%20custom)
 
 #### ご連絡はこちらから
 要望･感想･お仕事･インターンの依頼などは[Twitter](https://twitter.com/nichi_pro_)のDMからお願いします！
