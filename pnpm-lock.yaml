@@ -109,8 +109,8 @@ devDependencies:
     specifier: ^7.0.11
     version: 7.0.11(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)
   '@storybook/testing-library':
-    specifier: ^0.0.14-next.2
-    version: 0.0.14-next.2
+    specifier: ^0.1.0
+    version: 0.1.0
   '@types/eslint':
     specifier: ^8.21.3
     version: 8.21.3
@@ -3638,16 +3638,6 @@ packages:
       '@storybook/preview-api': 7.0.11
     dev: true
 
-  /@storybook/instrumenter@7.0.5:
-    resolution: {integrity: sha512-A+uPQjA8JqR23efQbMHKnmeoltAJGYEV+855X3X27aie2B4mUo3KHELyeioaqTVuh1KZ/K0dTvjpfbGSQGscvg==}
-    dependencies:
-      '@storybook/channels': 7.0.5
-      '@storybook/client-logger': 7.0.5
-      '@storybook/core-events': 7.0.5
-      '@storybook/global': 5.0.0
-      '@storybook/preview-api': 7.0.5
-    dev: true
-
   /@storybook/manager-api@7.0.11(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-xR7/h0EGGaUBPSpQ7vuEq6B//wKM9vKqOqvZ4xMsebxw0b2cf1GYAm1Z2rR9n+fMXJEiPvVzGcuZd9jekGf2mQ==}
     peerDependencies:
@@ -4024,11 +4014,11 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/testing-library@0.0.14-next.2:
-    resolution: {integrity: sha512-i/SLSGm0o978ELok/SB4Qg1sZ3zr+KuuCkzyFqcCD0r/yf+bG35aQGkFqqxfSAdDxuQom0NO02FE+qys5Eapdg==}
+  /@storybook/testing-library@0.1.0:
+    resolution: {integrity: sha512-g947f4LJZw3IluBhysMKLJXByAFiSxnGuooENqU+ZPt/GTrz1I9GDBlhmoTJahuFkVbwHvziAl/8riY2Re921g==}
     dependencies:
-      '@storybook/client-logger': 7.0.5
-      '@storybook/instrumenter': 7.0.5
+      '@storybook/client-logger': 7.0.11
+      '@storybook/instrumenter': 7.0.11
       '@testing-library/dom': 8.20.0
       '@testing-library/user-event': 13.5.0(@testing-library/dom@8.20.0)
       ts-dedent: 2.2.0
