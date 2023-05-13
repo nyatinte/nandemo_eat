@@ -175,8 +175,8 @@ devDependencies:
     specifier: ^4.11.0
     version: 4.11.0
   prisma-erd-generator:
-    specifier: ^1.5.4
-    version: 1.5.4(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.11.0)(@prisma/generator-helper@4.13.0)
+    specifier: ^1.7.0
+    version: 1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.11.0)(@prisma/generator-helper@4.13.0)
   storybook:
     specifier: ^7.0.11
     version: 7.0.11
@@ -10556,8 +10556,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /prisma-erd-generator@1.5.4(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.11.0)(@prisma/generator-helper@4.13.0):
-    resolution: {integrity: sha512-SyBR8S3W4UOnv4jtLpRsxWvkSFOJD/N5t2A5cvEZO2teza/Yu0hDA7Hz07jJM1hp5JBjzf6VMk2dvAkuzPxQ0Q==}
+  /prisma-erd-generator@1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.11.0)(@prisma/generator-helper@4.13.0):
+    resolution: {integrity: sha512-YwFSMf83Cvly9QcWdEG+HYaCTBf9puV65QVVwXawqpS2KBi/xevUtTfwQ/KrbuCUPdypnwEu51aslfgZ4Sq88g==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
