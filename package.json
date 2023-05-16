@@ -30,7 +30,7 @@
     "@trpc/react-query": "^10.26.0",
     "@trpc/server": "^10.26.0",
     "daisyui": "^2.51.6",
-    "framer-motion": "^10.12.11",
+    "framer-motion": "^10.12.12",
     "jotai": "^2.1.0",
     "next": "^13.4.2",
     "next-seo": "^6.0.0",
