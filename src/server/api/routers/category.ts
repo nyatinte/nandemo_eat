@@ -8,7 +8,6 @@ export const categoryRouter = createTRPCRouter({
     return ctx.prisma.category.findMany({});
   }),
 
-  // 作成する
   create: publicProcedure
     .input(
       z.object({
