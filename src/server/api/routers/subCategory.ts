@@ -9,7 +9,6 @@ export const subCategoryRouter = createTRPCRouter({
     return ctx.prisma.subCategory.findMany({});
   }),
 
-  // 作成する
   create: publicProcedure
     .input(
       z.object({
@@ -50,7 +49,6 @@ export const subCategoryRouter = createTRPCRouter({
     .query(async ({ ctx, input }) => {
       const subCategories = await ctx.prisma.subCategory.findMany({});
 
-      // カテゴリをもとに、該当のカテゴリとサブカテゴリをもつ料理があるかどうかを判定する。もし料理があれば、そのサブカテゴリを返す。
       const subCategoriesByCategory: SubCategory[] = [];
       for (const subCategory of subCategories) {
         const dish = await ctx.prisma.dish.findFirst({
