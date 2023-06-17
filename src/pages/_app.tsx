@@ -56,7 +56,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           cardType: "summary_large_image",
         }}
       />
-      <main className={zen_maru_gothic.className}>
+      <main className={zen_maru_gothic.className} lang="ja">
         <Toaster />
         <Header />
         <div className="min-h-without-header bg-bg">

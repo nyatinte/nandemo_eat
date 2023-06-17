@@ -20,7 +20,7 @@ export const Footer: FC = () => {
         <p>Copyright (c) 2023 NakamuraTakumi</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="https://twitter.com/nyatinte">
+        <a href="https://twitter.com/nichi_pro_">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

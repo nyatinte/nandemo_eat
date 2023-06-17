@@ -7,15 +7,13 @@ import { Sidebar } from "../Sidebar";
 
 import type { FC } from "react";
 
-
-
 /**
  * Header
  */
 export const Header: FC = () => {
   const user = useUser();
   return (
-    <header className="z-0 flex h-20 w-screen items-center justify-end gap-4 border border-b px-4">
+    <header className="z-0 flex h-20 w-screen items-center justify-end gap-4 border border-b">
       <Sidebar />
       <div className="grid place-content-center">
         <Avatar src={user.user?.profileImageUrl} />
