@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@clerk/nextjs':
     specifier: ^4.19.0
@@ -68,8 +72,8 @@ dependencies:
     specifier: ^5.7.3
     version: 5.7.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
   superjson:
-    specifier: 1.12.3
-    version: 1.12.3
+    specifier: 1.12.4
+    version: 1.12.4
   tailwind-merge:
     specifier: ^1.12.0
     version: 1.12.0
@@ -12442,8 +12446,8 @@ packages:
       pirates: 4.0.5
       ts-interface-checker: 0.1.13
 
-  /superjson@1.12.3:
-    resolution: {integrity: sha512-0j+U70KUtP8+roVPbwfqkyQI7lBt7ETnuA7KXbTDX3mCKiD/4fXs2ldKSMdt0MCfpTwiMxo20yFU3vu6ewETpQ==}
+  /superjson@1.12.4:
+    resolution: {integrity: sha512-vkpPQAxdCg9SLfPv5GPC5fnGrui/WryktoN9O5+Zif/14QIMjw+RITf/5LbBh+9QpBFb3KNvJth+puz2H8o6GQ==}
     engines: {node: '>=10'}
     dependencies:
       copy-anything: 3.0.3
