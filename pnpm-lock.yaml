@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@clerk/nextjs':
     specifier: ^4.19.0
@@ -85,8 +89,8 @@ devDependencies:
     specifier: ^3.8.0
     version: 3.8.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4)
   '@mermaid-js/mermaid-cli':
-    specifier: ^10.1.0
-    version: 10.1.0(typescript@5.0.4)
+    specifier: ^10.2.4
+    version: 10.2.4(typescript@5.0.4)
   '@storybook/addon-essentials':
     specifier: ^7.0.18
     version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
@@ -176,7 +180,7 @@ devDependencies:
     version: 4.14.1
   prisma-erd-generator:
     specifier: ^1.7.0
-    version: 1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0)
+    version: 1.7.0(@mermaid-js/mermaid-cli@10.2.4)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0)
   storybook:
     specifier: ^7.0.18
     version: 7.0.18
@@ -2397,8 +2401,8 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@mermaid-js/mermaid-cli@10.1.0(typescript@5.0.4):
-    resolution: {integrity: sha512-O75bbknW9xe1KYpD0Zgjfa81oH4pjPdAPmR4miXBKTmoqPhQMzbbecCJJmJFLpa1D8UaSBr2lNgKoagXEzNT8Q==}
+  /@mermaid-js/mermaid-cli@10.2.4(typescript@5.0.4):
+    resolution: {integrity: sha512-5y2wPpLE8AJiCODVXmcccTAbSvkCQ1EtJJahQoGsbcyTTVMrr7C7sW8VUELHI4JjlekU5+czAyDH2+PJI0ZBkQ==}
     engines: {node: ^14.13 || >=16.0}
     hasBin: true
     dependencies:
@@ -10977,7 +10981,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /prisma-erd-generator@1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0):
+  /prisma-erd-generator@1.7.0(@mermaid-js/mermaid-cli@10.2.4)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0):
     resolution: {integrity: sha512-YwFSMf83Cvly9QcWdEG+HYaCTBf9puV65QVVwXawqpS2KBi/xevUtTfwQ/KrbuCUPdypnwEu51aslfgZ4Sq88g==}
     engines: {node: '>=14'}
     hasBin: true
@@ -10986,7 +10990,7 @@ packages:
       '@prisma/client': ^4.0.0
       '@prisma/generator-helper': ^4.0.0
     dependencies:
-      '@mermaid-js/mermaid-cli': 10.1.0(typescript@5.0.4)
+      '@mermaid-js/mermaid-cli': 10.2.4(typescript@5.0.4)
       '@prisma/client': 4.14.1(prisma@4.14.1)
       '@prisma/generator-helper': 4.13.0
       dotenv: 16.0.3
