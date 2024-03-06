@@ -72,8 +72,8 @@ dependencies:
     specifier: ^5.7.3
     version: 5.7.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
   superjson:
-    specifier: 1.12.3
-    version: 1.12.3
+    specifier: 1.13.3
+    version: 1.13.3
   tailwind-merge:
     specifier: ^1.12.0
     version: 1.12.0
@@ -3681,8 +3681,6 @@ packages:
       '@babel/core':
         optional: true
       '@next/font':
-        optional: true
-      '@storybook/addon-actions':
         optional: true
       typescript:
         optional: true
@@ -12474,8 +12472,8 @@ packages:
       pirates: 4.0.5
       ts-interface-checker: 0.1.13
 
-  /superjson@1.12.3:
-    resolution: {integrity: sha512-0j+U70KUtP8+roVPbwfqkyQI7lBt7ETnuA7KXbTDX3mCKiD/4fXs2ldKSMdt0MCfpTwiMxo20yFU3vu6ewETpQ==}
+  /superjson@1.13.3:
+    resolution: {integrity: sha512-mJiVjfd2vokfDxsQPOwJ/PtanO87LhpYY88ubI5dUB1Ab58Txbyje3+jpm+/83R/fevaq/107NNhtYBLuoTrFg==}
     engines: {node: '>=10'}
     dependencies:
       copy-anything: 3.0.3
