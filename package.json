@@ -82,7 +82,7 @@
     "prisma-erd-generator": "^1.7.0",
     "storybook": "^7.0.18",
     "tailwindcss": "^3.3.2",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4"
   },
   "ct3aMetadata": {
