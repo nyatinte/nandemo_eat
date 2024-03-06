@@ -22,6 +22,9 @@ export const CategorySection: FC = () => {
   const [choice, setChoice] = useAtom(categoryAtom);
   useEffect(() => {
     setChoice("");
+    return () => {
+      setChoice("");
+    };
   }, [setChoice]);
 
   const setSection = useSetAtom(sectionAtom);
@@ -40,6 +43,9 @@ export const CategorySection: FC = () => {
   if (isLoading) return <LoadingPage />;
   if (error) {
     toast.error("エラーが発生しました。再度お試しください。");
+    toast.error(
+      "データベースが動作していません。管理者にお問い合わせください。"
+    );
   }
   return (
     <Container>
