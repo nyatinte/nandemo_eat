@@ -4,7 +4,7 @@ import { type AppType } from "next/app";
 import { Zen_Maru_Gothic } from "next/font/google";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 import { Footer } from "@/components/Layout/Footer";
 import { Header } from "@/components/Layout/Header";
@@ -15,6 +15,9 @@ const zen_maru_gothic = Zen_Maru_Gothic({
   subsets: ["latin"],
 });
 const MyApp: AppType = ({ Component, pageProps }) => {
+  toast.error(
+    "現在データベースの動作を停止しており、正常に動作しません。申し訳ございません。"
+  );
   return (
     <ClerkProvider>
       <Head>
