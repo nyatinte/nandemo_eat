@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.1.0(react-hook-form@7.44.1)
   '@prisma/client':
-    specifier: ^4.14.1
-    version: 4.14.1(prisma@4.14.1)
+    specifier: ^5.11.0
+    version: 5.11.0(prisma@5.11.0)
   '@tanstack/react-query':
     specifier: ^4.29.11
     version: 4.29.11(react-dom@18.2.0)(react@18.2.0)
@@ -176,11 +176,11 @@ devDependencies:
     specifier: ^0.3.0
     version: 0.3.0(prettier@2.8.6)
   prisma:
-    specifier: ^4.14.1
-    version: 4.14.1
+    specifier: ^5.11.0
+    version: 5.11.0
   prisma-erd-generator:
     specifier: ^1.7.0
-    version: 1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0)
+    version: 1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@5.11.0)(@prisma/generator-helper@4.13.0)
   storybook:
     specifier: ^7.0.18
     version: 7.0.18
@@ -2609,9 +2609,9 @@ packages:
       webpack: 5.79.0(esbuild@0.17.17)
     dev: true
 
-  /@prisma/client@4.14.1(prisma@4.14.1):
-    resolution: {integrity: sha512-TZIswkeX1ccsHG/eN2kICzg/csXll0osK3EHu1QKd8VJ3XLcXozbNELKkCNfsCUvKJAwPdDtFCzF+O+raIVldw==}
-    engines: {node: '>=14.17'}
+  /@prisma/client@5.11.0(prisma@5.11.0):
+    resolution: {integrity: sha512-SWshvS5FDXvgJKM/a0y9nDC1rqd7KG0Q6ZVzd+U7ZXK5soe73DJxJJgbNBt2GNXOa+ysWB4suTpdK5zfFPhwiw==}
+    engines: {node: '>=16.13'}
     requiresBuild: true
     peerDependencies:
       prisma: '*'
@@ -2619,8 +2619,7 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
-      prisma: 4.14.1
+      prisma: 5.11.0
 
   /@prisma/debug@4.13.0:
     resolution: {integrity: sha512-JrltTewF/paRb5mcM5OvcEi9DtdX0sINOAswruxKQrwOLA7Phqb52OfY38MIzGrsrJ8iUGVqQ5bpYZYpxOGCsQ==}
@@ -2632,12 +2631,27 @@ packages:
       - supports-color
     dev: true
 
-  /@prisma/engines-version@4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c:
-    resolution: {integrity: sha512-3jum8/YSudeSN0zGW5qkpz+wAN2V/NYCQ+BPjvHYDfWatLWlQkqy99toX0GysDeaUoBIJg1vaz2yKqiA3CFcQw==}
+  /@prisma/debug@5.11.0:
+    resolution: {integrity: sha512-N6yYr3AbQqaiUg+OgjkdPp3KPW1vMTAgtKX6+BiB/qB2i1TjLYCrweKcUjzOoRM5BriA4idrkTej9A9QqTfl3A==}
 
-  /@prisma/engines@4.14.1:
-    resolution: {integrity: sha512-APqFddPVHYmWNKqc+5J5SqrLFfOghKOLZxobmguDUacxOwdEutLsbXPVhNnpFDmuQWQFbXmrTTPoRrrF6B1MWA==}
+  /@prisma/engines-version@5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102:
+    resolution: {integrity: sha512-WXCuyoymvrS4zLz4wQagSsc3/nE6CHy8znyiMv8RKazKymOMd5o9FP5RGwGHAtgoxd+aB/BWqxuP/Ckfu7/3MA==}
+
+  /@prisma/engines@5.11.0:
+    resolution: {integrity: sha512-gbrpQoBTYWXDRqD+iTYMirDlF9MMlQdxskQXbhARhG6A/uFQjB7DZMYocMQLoiZXO/IskfDOZpPoZE8TBQKtEw==}
     requiresBuild: true
+    dependencies:
+      '@prisma/debug': 5.11.0
+      '@prisma/engines-version': 5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102
+      '@prisma/fetch-engine': 5.11.0
+      '@prisma/get-platform': 5.11.0
+
+  /@prisma/fetch-engine@5.11.0:
+    resolution: {integrity: sha512-994viazmHTJ1ymzvWugXod7dZ42T2ROeFuH6zHPcUfp/69+6cl5r9u3NFb6bW8lLdNjwLYEVPeu3hWzxpZeC0w==}
+    dependencies:
+      '@prisma/debug': 5.11.0
+      '@prisma/engines-version': 5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102
+      '@prisma/get-platform': 5.11.0
 
   /@prisma/generator-helper@4.13.0:
     resolution: {integrity: sha512-Zx9rtbsEIU/9DKnGRvmjLdyeyhzeeXNFp1alkRh1w//rQ5jTcobiay/jU4Qo+EQOs2bnWEfUeiBoOjfaysdLNg==}
@@ -2649,6 +2663,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@prisma/get-platform@5.11.0:
+    resolution: {integrity: sha512-rxtHpMLxNTHxqWuGOLzR2QOyQi79rK1u1XYAVLZxDGTLz/A+uoDnjz9veBFlicrpWjwuieM4N6jcnjj/DDoidw==}
+    dependencies:
+      '@prisma/debug': 5.11.0
 
   /@puppeteer/browsers@0.4.1(typescript@5.0.4):
     resolution: {integrity: sha512-4IICvy1McAkT/HyNZHIs7sp8ngBX1dmO0TPQ+FWq9ATQMqI8p+Ulm5A3kS2wYDh5HDHHkYrrETOu6rlj64VuTw==}
@@ -3681,8 +3700,6 @@ packages:
       '@babel/core':
         optional: true
       '@next/font':
-        optional: true
-      '@storybook/addon-actions':
         optional: true
       typescript:
         optional: true
@@ -11007,7 +11024,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /prisma-erd-generator@1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@4.14.1)(@prisma/generator-helper@4.13.0):
+  /prisma-erd-generator@1.7.0(@mermaid-js/mermaid-cli@10.1.0)(@prisma/client@5.11.0)(@prisma/generator-helper@4.13.0):
     resolution: {integrity: sha512-YwFSMf83Cvly9QcWdEG+HYaCTBf9puV65QVVwXawqpS2KBi/xevUtTfwQ/KrbuCUPdypnwEu51aslfgZ4Sq88g==}
     engines: {node: '>=14'}
     hasBin: true
@@ -11017,18 +11034,18 @@ packages:
       '@prisma/generator-helper': ^4.0.0
     dependencies:
       '@mermaid-js/mermaid-cli': 10.1.0(typescript@5.0.4)
-      '@prisma/client': 4.14.1(prisma@4.14.1)
+      '@prisma/client': 5.11.0(prisma@5.11.0)
       '@prisma/generator-helper': 4.13.0
       dotenv: 16.0.3
     dev: true
 
-  /prisma@4.14.1:
-    resolution: {integrity: sha512-z6hxzTMYqT9SIKlzD08dhzsLUpxjFKKsLpp5/kBDnSqiOjtUyyl/dC5tzxLcOa3jkEHQ8+RpB/fE3w8bgNP51g==}
-    engines: {node: '>=14.17'}
+  /prisma@5.11.0:
+    resolution: {integrity: sha512-KCLiug2cs0Je7kGkQBN9jDWoZ90ogE/kvZTUTgz2h94FEo8pczCkPH7fPNXkD1sGU7Yh65risGGD1HQ5DF3r3g==}
+    engines: {node: '>=16.13'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.14.1
+      '@prisma/engines': 5.11.0
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
