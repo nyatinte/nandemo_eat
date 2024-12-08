@@ -40,7 +40,7 @@
     "react-hook-form": "^7.44.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
-    "react-loader-spinner": "^5.3.4",
+    "react-loader-spinner": "^5.4.5",
     "react-select": "^5.7.3",
     "superjson": "1.12.3",
     "tailwind-merge": "^1.12.0",
