@@ -33,8 +33,8 @@ dependencies:
     specifier: ^10.28.0
     version: 10.28.0
   daisyui:
-    specifier: ^2.51.6
-    version: 2.51.6(autoprefixer@10.4.16)(postcss@8.4.33)(ts-node@10.9.1)
+    specifier: ^2.52.0
+    version: 2.52.0(autoprefixer@10.4.16)(postcss@8.4.33)(ts-node@10.9.1)
   framer-motion:
     specifier: ^10.12.16
     version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
@@ -6507,8 +6507,8 @@ packages:
       type: 1.2.0
     dev: true
 
-  /daisyui@2.51.6(autoprefixer@10.4.16)(postcss@8.4.33)(ts-node@10.9.1):
-    resolution: {integrity: sha512-JRqOKayuFCmWe4X4k6Qvx1y7V/VNao8U5eTSOhusOKIzCsYqf56+TCSe4d7zmqGE0V6JiLDYAT8JeoWUeRKFCw==}
+  /daisyui@2.52.0(autoprefixer@10.4.16)(postcss@8.4.33)(ts-node@10.9.1):
+    resolution: {integrity: sha512-LQTA5/IVXAJHBMFoeaEMfd7/akAFPPcdQPR3O9fzzcFiczneJFM73CFPnScmW2sOgn/D83cvkP854ep2T9OfTg==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
