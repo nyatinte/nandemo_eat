@@ -58,7 +58,7 @@
     "@storybook/nextjs": "^7.0.18",
     "@storybook/react": "^7.0.18",
     "@storybook/testing-library": "^0.1.0",
-    "@types/eslint": "^8.40.0",
+    "@types/eslint": "^8.56.12",
     "@types/node": "^18.16.16",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.2.7",
