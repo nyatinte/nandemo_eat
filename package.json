@@ -33,7 +33,7 @@
     "framer-motion": "^10.12.16",
     "jotai": "^2.1.0",
     "next": "^13.4.4",
-    "next-seo": "^6.0.0",
+    "next-seo": "^6.6.0",
     "next-sitemap": "^4.1.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
