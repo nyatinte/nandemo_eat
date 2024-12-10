@@ -69,8 +69,8 @@ dependencies:
     specifier: ^5.3.4
     version: 5.3.4(react-dom@18.2.0)(react@18.2.0)
   react-select:
-    specifier: ^5.7.3
-    version: 5.7.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.8.3
+    version: 5.8.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
   superjson:
     specifier: 1.12.3
     version: 1.12.3
@@ -11432,8 +11432,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-select@5.7.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-z8i3NCuFFWL3w27xq92rBkVI2onT0jzIIPe480HlBjXJ3b5o6Q+Clp4ydyeKrj9DZZ3lrjawwLC5NGl0FSvUDg==}
+  /react-select@5.8.3(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-lVswnIq8/iTj1db7XCG74M/3fbGB6ZaluCzvwPGT5ZOjCdL/k0CLWhEK0vCBLuU5bHTEf6Gj8jtSvi+3v+tO1w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
