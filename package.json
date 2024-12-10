@@ -47,7 +47,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@markuplint/jsx-parser": "^3.7.0",
+    "@markuplint/jsx-parser": "^4.7.14",
     "@markuplint/react-spec": "^3.8.0",
     "@mermaid-js/mermaid-cli": "^10.1.0",
     "@storybook/addon-essentials": "^7.0.18",
