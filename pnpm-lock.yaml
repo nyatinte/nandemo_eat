@@ -75,8 +75,8 @@ dependencies:
     specifier: 1.12.3
     version: 1.12.3
   tailwind-merge:
-    specifier: ^1.12.0
-    version: 1.12.0
+    specifier: ^2.5.5
+    version: 2.5.5
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -12542,8 +12542,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /tailwind-merge@1.12.0:
-    resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
+  /tailwind-merge@2.5.5:
+    resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
     dev: false
 
   /tailwindcss@3.3.2(ts-node@10.9.1):
