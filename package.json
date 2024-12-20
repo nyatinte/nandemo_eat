@@ -20,7 +20,7 @@
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.31.6",
+    "@clerk/nextjs": "^6.9.6",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.1.0",
     "@prisma/client": "^4.14.1",
